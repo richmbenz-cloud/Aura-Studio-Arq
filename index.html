@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Aura Studio Arq — Arquitectura, interiorismo y visualización 3D</title>
+<meta name="description" content="Estudio de arquitectura, interiorismo y visualización 3D en Lima, Perú. Diseño contemporáneo con enfoque en estética, funcionalidad y narrativa espacial.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 32 32%22%3E%3Crect width=%2232%22 height=%2232%22 fill=%22%231d1b19%22/%3E%3Ctext x=%2216%22 y=%2222%22 font-size=%2216%22 text-anchor=%22middle%22 fill=%22%23e9e4dc%22 font-family=%22sans-serif%22%3EA%3C/text%3E%3C/svg%3E">
+<link rel="preload" as="image" href="assets/p6.webp">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500&family=Cormorant+Garamond:ital,wght@1,300;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#1d1b19;
+  --sand:#e9e4dc;
+  --paper:#f4f1ec;
+  --line:rgba(255,255,255,.45);
+  --gold:#b08a5a;
+  --muted:#6f6962;
+  --pad:clamp(20px,5vw,72px);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Poppins',sans-serif;font-weight:300;color:var(--ink);background:var(--paper);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+img{display:block;max-width:100%}
+em.serif{font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:300;letter-spacing:0}
+.wrap{padding-left:var(--pad);padding-right:var(--pad)}
+.eyebrow{font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);display:flex;align-items:center;gap:14px}
+.eyebrow::before{content:"";width:28px;height:1px;background:currentColor}
+.reveal{opacity:0;transform:translateY(28px);transition:opacity 1s ease,transform 1s cubic-bezier(.2,.7,.2,1)}
+.reveal.in{opacity:1;transform:none}
+.h2{font-weight:300;font-size:clamp(34px,4.4vw,64px);text-transform:uppercase;line-height:1;margin-top:22px}
+.hero{position:relative;height:100vh;min-height:640px;color:#fff;overflow:hidden;background:#211c17}
+.hero>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transform:scale(1.08);animation:settle 2.4s cubic-bezier(.2,.7,.2,1) forwards}
+@keyframes settle{to{transform:scale(1)}}
+.hero::after{content:"";position:absolute;inset:0;pointer-events:none;background:
+  linear-gradient(90deg,rgba(18,15,12,.72) 0%,rgba(18,15,12,.25) 50%,rgba(18,15,12,.35) 100%),
+  linear-gradient(0deg,rgba(18,15,12,.6),transparent 40%)}
+nav.top{position:absolute;top:0;left:0;right:0;z-index:5;display:flex;justify-content:space-between;align-items:center;padding:30px var(--pad) 22px;font-size:11px;letter-spacing:.14em;text-transform:uppercase}
+nav.top::after{content:"";position:absolute;left:var(--pad);right:var(--pad);bottom:0;height:1px;background:var(--line)}
+nav.top .logo{font-weight:400;letter-spacing:.2em}
+nav.top ul{display:flex;gap:clamp(18px,3.4vw,52px);list-style:none}
+nav.top ul a{position:relative;opacity:.9}
+nav.top ul a::after{content:"";position:absolute;left:0;bottom:-6px;width:0;height:1px;background:#fff;transition:width .35s}
+nav.top ul a:hover::after{width:100%}
+.burger{display:none;background:none;border:0;color:#fff;cursor:pointer}
+.hero-content{position:absolute;z-index:4;left:var(--pad);right:var(--pad);top:0;bottom:0;display:flex;align-items:center;justify-content:space-between;gap:40px}
+.hero h1{font-weight:300;text-transform:uppercase;font-size:clamp(44px,7.6vw,120px);line-height:.98;letter-spacing:-.01em}
+.hero h1 span{display:block;overflow:hidden}
+.hero h1 span i{display:block;font-style:normal;transform:translateY(105%);animation:up 1.2s cubic-bezier(.2,.7,.2,1) forwards}
+.hero h1 span:nth-child(2) i{animation-delay:.12s;padding-left:.62em}
+.hero h1 span:nth-child(3) i{animation-delay:.24s;padding-left:.62em}
+@keyframes up{to{transform:none}}
+.hero-side{align-self:flex-end;margin-bottom:16vh;max-width:260px;opacity:0;animation:fade 1s .7s forwards}
+.hero-side p{font-size:12.5px;line-height:1.6;text-align:right;margin-bottom:34px}
+@keyframes fade{to{opacity:1}}
+.btn-card{display:inline-flex;justify-content:space-between;align-items:center;gap:60px;background:#fff;color:var(--ink);padding:20px 22px;font-size:11px;letter-spacing:.14em;text-transform:uppercase;min-width:240px;transition:background .3s,color .3s;border:0;cursor:pointer;font-family:inherit}
+.btn-card svg{transition:transform .3s}
+.btn-card:hover{background:var(--ink);color:#fff}
+.btn-card:hover svg{transform:translate(3px,-3px)}
+.scroll-btn{position:absolute;z-index:5;left:var(--pad);bottom:34px;width:38px;height:38px;border-radius:50%;background:#fff;color:var(--ink);display:grid;place-items:center;animation:bob 2.4s ease-in-out infinite}
+@keyframes bob{50%{transform:translateY(6px)}}
+.hero-meta{position:absolute;z-index:5;right:var(--pad);bottom:40px;font-size:10px;letter-spacing:.2em;text-transform:uppercase;opacity:.8}
+.intro{padding-top:clamp(90px,12vw,160px);padding-bottom:clamp(80px,10vw,140px)}
+.intro-grid{display:grid;grid-template-columns:1.25fr 1fr;gap:6vw;align-items:end}
+.intro h2{font-weight:300;font-size:clamp(28px,3.4vw,50px);line-height:1.15;letter-spacing:-.01em;margin-top:28px}
+.intro h2 em.serif{font-size:1.12em;color:var(--gold)}
+.intro .copy{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-top:40px;font-size:14px;line-height:1.75;color:#55504a}
+.intro figure{position:relative}
+.intro figure img{width:100%;aspect-ratio:4/5;object-fit:cover}
+.intro figcaption{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-top:12px}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);margin-top:56px;border-top:1px solid #d9d3ca}
+.stat{padding:26px 0 0 24px;border-right:1px solid #d9d3ca}
+.stat:first-child{padding-left:0}
+.stat:last-child{border-right:0}
+.stat b{display:block;font-weight:200;font-size:clamp(40px,4.6vw,72px);line-height:1}
+.stat span{font-size:12px;color:var(--muted);letter-spacing:.05em}
+.services{background:var(--ink);color:var(--sand);padding:clamp(80px,10vw,140px) 0}
+.services .eyebrow{color:#a39b91}
+.services-head{display:flex;justify-content:space-between;align-items:flex-end;gap:40px;margin-bottom:60px;flex-wrap:wrap}
+.services-head p{max-width:360px;font-size:14px;line-height:1.7;color:#a39b91}
+.svc{display:grid;grid-template-columns:80px 1fr 1.2fr 60px;align-items:center;gap:30px;padding:34px 0;border-top:1px solid #3a3632}
+.svc:last-child{border-bottom:1px solid #3a3632}
+.svc .n{font-size:12px;color:#7d756c;letter-spacing:.1em}
+.svc h3{font-weight:300;font-size:clamp(22px,2.4vw,34px);text-transform:uppercase;letter-spacing:.01em;transition:transform .4s}
+.svc p{font-size:13.5px;line-height:1.7;color:#a39b91}
+.svc .arr{justify-self:end;width:44px;height:44px;border:1px solid #4a4540;border-radius:50%;display:grid;place-items:center;transition:all .35s}
+.svc:hover h3{transform:translateX(14px)}
+.svc:hover .arr{background:var(--sand);color:var(--ink);border-color:var(--sand);transform:rotate(-45deg)}
+.portfolio{padding-top:clamp(90px,11vw,150px);padding-bottom:clamp(90px,11vw,150px)}
+.pf-head{display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:30px;margin-bottom:50px}
+.filters{display:flex;gap:8px;flex-wrap:wrap}
+.filters button{font:inherit;font-size:11px;letter-spacing:.14em;text-transform:uppercase;background:none;border:1px solid #cfc8bd;padding:11px 18px;border-radius:40px;cursor:pointer;color:var(--ink);transition:all .3s}
+.filters button.on,.filters button:hover{background:var(--ink);color:#fff;border-color:var(--ink)}
+.pf-grid{display:grid;grid-template-columns:repeat(12,1fr);gap:26px 22px}
+.card{position:relative;cursor:pointer;text-align:left;background:none;border:0;font:inherit;color:inherit;padding:0}
+.card.hide{display:none}
+.card .img{position:relative;overflow:hidden;background:#d6cfc5}
+.card .img img{width:100%;height:100%;object-fit:cover;transition:transform 1.2s cubic-bezier(.2,.7,.2,1)}
+.card:hover .img img{transform:scale(1.05)}
+.card .img::after{content:"Ver proyecto ↗";position:absolute;right:16px;bottom:16px;background:#fff;color:var(--ink);font-size:10px;letter-spacing:.16em;text-transform:uppercase;padding:10px 14px;opacity:0;transform:translateY(8px);transition:all .4s}
+.card:hover .img::after{opacity:1;transform:none}
+.card .cap{display:flex;justify-content:space-between;align-items:baseline;gap:12px;padding-top:16px}
+.card .cap h4{font-weight:400;font-size:16px;letter-spacing:.02em}
+.card .cap span{font-size:11px;color:var(--muted);letter-spacing:.12em;text-transform:uppercase;white-space:nowrap}
+.card .tag{position:absolute;top:16px;left:16px;background:rgba(255,255,255,.9);font-size:10px;letter-spacing:.16em;text-transform:uppercase;padding:7px 12px;z-index:2}
+.c-tall{grid-column:span 5}.c-tall .img{aspect-ratio:4/5}
+.c-wide{grid-column:span 7}.c-wide .img{aspect-ratio:7/5}
+.c-full{grid-column:span 12}.c-full .img{aspect-ratio:12/5}
+.modal{position:fixed;inset:0;z-index:50;background:#171310;color:var(--sand);display:none;overflow-y:auto}
+.modal.open{display:block;animation:fade .4s forwards}
+.modal-inner{display:grid;grid-template-columns:1.3fr 1fr;gap:5vw;padding:90px var(--pad) 70px;min-height:100%;align-items:center}
+.modal img{width:100%;max-height:78vh;object-fit:cover}
+.modal .eyebrow{color:#a39b91}
+.modal h3{font-weight:300;text-transform:uppercase;font-size:clamp(34px,4vw,60px);line-height:1;margin:20px 0 18px}
+.modal .tagline{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(20px,1.8vw,26px);line-height:1.35;color:#e4d9c9;margin-bottom:24px}
+.modal p.d{font-size:14px;line-height:1.8;color:#b4aa9e;margin-bottom:14px}
+.modal dl{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:28px;padding-top:22px;border-top:1px solid #3a3632}
+.modal dt{font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:#857c71}
+.modal dd{font-size:13.5px;margin-top:6px}
+.modal-close{position:fixed;top:24px;right:var(--pad);width:46px;height:46px;border-radius:50%;background:#fff;color:var(--ink);border:0;cursor:pointer;display:grid;place-items:center;z-index:2}
+.modal-nav{display:flex;gap:10px;margin-top:34px}
+.modal-nav button{font:inherit;font-size:11px;letter-spacing:.14em;text-transform:uppercase;background:none;color:var(--sand);border:1px solid #4a4540;padding:12px 18px;border-radius:40px;cursor:pointer}
+.modal-nav button:hover{background:var(--sand);color:var(--ink)}
+.ig{background:var(--sand);padding:clamp(80px,9vw,130px) 0}
+.ig-head{display:flex;justify-content:space-between;align-items:flex-end;gap:30px;flex-wrap:wrap;margin-bottom:44px}
+.ig-head h2{font-weight:300;font-size:clamp(34px,4.4vw,64px);line-height:1;margin-top:22px}
+.link-line{font-size:11px;letter-spacing:.18em;text-transform:uppercase;border-bottom:1px solid currentColor;padding-bottom:6px}
+.ig-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:10px}
+.ig-grid a{position:relative;overflow:hidden;aspect-ratio:1}
+.ig-grid img{width:100%;height:100%;object-fit:cover;transition:transform .9s cubic-bezier(.2,.7,.2,1),filter .5s}
+.ig-grid a:hover img{transform:scale(1.07);filter:brightness(.8)}
+.contact{position:relative;color:#fff;background:#211c17;overflow:hidden}
+.contact>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.contact::after{content:"";position:absolute;inset:0;background:rgba(20,17,14,.74)}
+.contact-inner{position:relative;z-index:2;display:grid;grid-template-columns:1.1fr 1fr;gap:6vw;padding:clamp(90px,11vw,150px) var(--pad)}
+.contact h2{font-weight:300;font-size:clamp(40px,6vw,92px);text-transform:uppercase;line-height:.98}
+.contact .eyebrow{color:#cfc6ba;margin-bottom:26px}
+.info{margin-top:56px;display:grid;grid-template-columns:repeat(3,auto);justify-content:start;gap:44px;font-size:14px;line-height:1.8}
+.info small{display:block;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:#bdb3a6;margin-bottom:6px}
+.info a:hover{text-decoration:underline}
+form{display:grid;gap:26px;align-content:end}
+.field{position:relative}
+.field input,.field textarea,.field select{width:100%;background:transparent;border:0;border-bottom:1px solid var(--line);color:#fff;font:inherit;font-size:15px;padding:12px 0;outline:none;transition:border-color .3s;border-radius:0}
+.field select option{color:var(--ink)}
+.field textarea{resize:none;height:90px}
+.field label{position:absolute;left:0;top:12px;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#cfc6ba;pointer-events:none;transition:all .3s}
+.field input:focus,.field textarea:focus{border-color:#fff}
+.field input:focus+label,.field input:not(:placeholder-shown)+label,.field textarea:focus+label,.field textarea:not(:placeholder-shown)+label{top:-10px;font-size:9.5px}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:26px}
+form .btn-card{justify-self:start}
+.sent{font-size:13px;color:#e4dccf;min-height:20px;line-height:1.6}
+footer{background:var(--ink);color:#8f877d;font-size:11px;letter-spacing:.14em;text-transform:uppercase}
+.foot{display:flex;justify-content:space-between;align-items:center;padding:30px var(--pad);flex-wrap:wrap;gap:16px}
+.foot.big{font-weight:200;color:var(--sand);font-size:clamp(60px,15vw,230px);letter-spacing:-.02em;line-height:.8;padding:60px var(--pad) 10px;text-transform:uppercase;border-bottom:1px solid #34302c;align-items:flex-end}
+.foot.big small{font-size:11px;letter-spacing:.2em;color:#8f877d;font-weight:300;line-height:1.8;text-align:right}
+.foot a:hover{color:var(--sand)}
+.socials{display:flex;gap:28px}
+@media (max-width:900px){
+  nav.top ul{display:none}
+  .burger{display:block}
+  nav.top.open ul{display:flex;flex-direction:column;position:absolute;top:70px;right:var(--pad);background:rgba(20,17,14,.94);padding:24px 28px;gap:18px}
+  .hero-content{flex-direction:column;justify-content:center;align-items:flex-start}
+  .hero-side{align-self:flex-start;margin:0}
+  .hero-side p{text-align:left;text-align-last:left}
+  .intro-grid,.contact-inner,.modal-inner{grid-template-columns:1fr}
+  .intro .copy{grid-template-columns:1fr}
+  .svc{grid-template-columns:40px 1fr 44px}
+  .svc p{display:none}
+  .pf-grid>.card{grid-column:span 12}
+  .ig-grid{grid-template-columns:repeat(3,1fr)}
+  .stats{grid-template-columns:repeat(3,1fr)}
+  .stat{padding-left:14px}
+  .info{grid-template-columns:1fr;gap:22px}
+  .row2{grid-template-columns:1fr}
+  .foot.big small{display:none}
+}
+</style>
+</head>
+<body>
+<header class="hero" id="inicio">
+  <img src="assets/p6.webp" alt="Bar Arcos, Barranco — interior con arcos de microcemento" fetchpriority="high">
+  <nav class="top" id="nav">
+    <a href="#inicio" class="logo">AURA&nbsp;STUDIO&nbsp;ARQ</a>
+    <ul>
+      <li><a href="#estudio">Estudio</a></li>
+      <li><a href="#servicios">Servicios</a></li>
+      <li><a href="#proyectos">Proyectos</a></li>
+      <li><a href="#diario">Diario</a></li>
+      <li><a href="#contacto">Contacto</a></li>
+    </ul>
+    <button class="burger" aria-label="Menú" onclick="document.getElementById('nav').classList.toggle('open')">
+      <svg width="26" height="14" viewBox="0 0 26 14"><path d="M0 1h26M8 13h18" stroke="currentColor" stroke-width="1.2"/></svg>
+    </button>
+  </nav>
+  <div class="hero-content">
+    <h1><span><i>Arquitectura</i></span><span><i>Interiorismo</i></span><span><i>Visión 3D</i></span></h1>
+    <div class="hero-side">
+      <p>Aura Studio Arq es un estudio multidisciplinario dedicado al diseño de espacios con narrativa, atmósfera y propósito.</p>
+      <a href="#proyectos" class="btn-card">Proyectos
+        <svg width="11" height="11" viewBox="0 0 11 11"><path d="M1 10L10 1M3 1h7v7" fill="none" stroke="currentColor" stroke-width="1.1"/></svg>
+      </a>
+    </div>
+  </div>
+  <a href="#estudio" class="scroll-btn" aria-label="Bajar">
+    <svg width="10" height="14" viewBox="0 0 10 14"><path d="M5 0v13M1 9l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.1"/></svg>
+  </a>
+  <div class="hero-meta">Estudio · Lima, Perú</div>
+</header>
+<section class="intro wrap" id="estudio">
+  <div class="intro-grid">
+    <div>
+      <div class="eyebrow reveal">01 — El estudio</div>
+      <h2 class="reveal">Diseñamos espacios que se habitan despacio, <em class="serif">con materia, luz y silencio.</em></h2>
+      <div class="copy reveal">
+        <p>Aura es un estudio dedicado a la arquitectura, el interiorismo y la visualización arquitectónica. Cada proyecto nace de una lectura cuidadosa del lugar, del cliente y de la luz que lo atraviesa.</p>
+        <p>Trabajamos en la frontera entre estética y función, entre la narrativa y la materia. Buscamos espacios donde la simplicidad sea radical y la atmósfera, inevitable.</p>
+      </div>
+      <div class="stats">
+        <div class="stat reveal"><b data-count="2019" data-plain="1">2019</b><span>Fundado</span></div>
+        <div class="stat reveal"><b data-count="40" data-prefix="+">+40</b><span>Proyectos</span></div>
+        <div class="stat reveal"><b data-count="4" data-pad="2">04</b><span>Disciplinas</span></div>
+      </div>
+    </div>
+    <figure class="reveal">
+      <img src="assets/about.webp" alt="Paleta material del proyecto Casa Travertino" loading="lazy">
+      <figcaption>Detalle de obra — Casa Travertino, 2024</figcaption>
+    </figure>
+  </div>
+</section>
+<section class="services" id="servicios">
+  <div class="wrap">
+    <div class="services-head">
+      <div><div class="eyebrow">02 — Servicios</div><h2 class="h2 reveal">Una práctica multidisciplinaria</h2></div>
+      <p class="reveal">Cuatro disciplinas conviven en el estudio bajo una misma sensibilidad editorial.</p>
+    </div>
+    <div class="svc reveal"><span class="n">01</span><h3>Arquitectura</h3><p>Proyecto integral desde el concepto hasta la obra terminada. Vivienda, comercial y cultural.</p><span class="arr"><svg width="12" height="12" viewBox="0 0 12 12"><path d="M0 6h11M7 2l4 4-4 4" fill="none" stroke="currentColor"/></svg></span></div>
+    <div class="svc reveal"><span class="n">02</span><h3>Diseño interior</h3><p>Espacios habitados con carácter: paleta material, mobiliario a medida y curaduría editorial.</p><span class="arr"><svg width="12" height="12" viewBox="0 0 12 12"><path d="M0 6h11M7 2l4 4-4 4" fill="none" stroke="currentColor"/></svg></span></div>
+    <div class="svc reveal"><span class="n">03</span><h3>Visualización 3D</h3><p>Renders fotorrealistas y recorridos virtuales para anticipar la atmósfera del proyecto.</p><span class="arr"><svg width="12" height="12" viewBox="0 0 12 12"><path d="M0 6h11M7 2l4 4-4 4" fill="none" stroke="currentColor"/></svg></span></div>
+    <div class="svc reveal"><span class="n">04</span><h3>Dirección creativa</h3><p>Acompañamiento estratégico para marcas, desarrolladores y proyectos hospitality.</p><span class="arr"><svg width="12" height="12" viewBox="0 0 12 12"><path d="M0 6h11M7 2l4 4-4 4" fill="none" stroke="currentColor"/></svg></span></div>
+  </div>
+</section>
+<section class="portfolio wrap" id="proyectos">
+  <div class="pf-head">
+    <div><div class="eyebrow">03 — Proyectos seleccionados</div><h2 class="h2 reveal">Obras recientes</h2></div>
+    <div class="filters" id="filters">
+      <button class="on" data-f="all">Todos</button>
+      <button data-f="Residencial">Residencial</button>
+      <button data-f="Interiorismo">Interiorismo</button>
+      <button data-f="Comercial">Comercial</button>
+      <button data-f="Cultural">Cultural</button>
+      <button data-f="Efímero">Efímero</button>
+    </div>
+  </div>
+  <div class="pf-grid" id="pfGrid"></div>
+</section>
+<section class="ig" id="diario">
+  <div class="wrap">
+    <div class="ig-head">
+      <div><div class="eyebrow">04 — Diario visual</div><h2 class="reveal">@aura.studioarq</h2></div>
+      <a class="link-line" href="https://www.instagram.com/aura.studioarq/" target="_blank" rel="noreferrer">Seguir en Instagram ↗</a>
+    </div>
+    <div class="ig-grid">
+      <a class="reveal" href="https://www.instagram.com/aura.studioarq/" target="_blank" rel="noreferrer"><img src="assets/ig-project-2.webp" alt="Cocina Roble" loading="lazy"></a>
+      <a class="reveal" href="https://www.instagram.com/aura.studioarq/" target="_blank" rel="noreferrer"><img src="assets/ig-project-5.webp" alt="Stand FIL" loading="lazy"></a>
+      <a class="reveal" href="https://www.instagram.com/aura.studioarq/" target="_blank" rel="noreferrer"><img src="assets/ig-project-1.webp" alt="Casa Travertino" loading="lazy"></a>
+      <a class="reveal" href="https://www.instagram.com/aura.studioarq/" target="_blank" rel="noreferrer"><img src="assets/ig-project-6.webp" alt="Bar Arcos" loading="lazy"></a>
+      <a class="reveal" href="https://www.instagram.com/aura.studioarq/" target="_blank" rel="noreferrer"><img src="assets/ig-project-4.webp" alt="Casa Lino" loading="lazy"></a>
+      <a class="reveal" href="https://www.instagram.com/aura.studioarq/" target="_blank" rel="noreferrer"><img src="assets/ig-project-3.webp" alt="Galería Cenital" loading="lazy"></a>
+    </div>
+  </div>
+</section>
+<section class="contact" id="contacto">
+  <img src="assets/hero.webp" alt="" loading="lazy">
+  <div class="contact-inner">
+    <div>
+      <div class="eyebrow">05 — Contacto</div>
+      <h2 class="reveal">Hablemos de<br>tu próximo<br>espacio</h2>
+      <div class="info">
+        <div><small>Email</small><a href="mailto:hola@aurastudioarq.com">hola@aurastudioarq.com</a></div>
+        <div><small>Estudio</small>Lima, Perú</div>
+        <div><small>Social</small><a href="https://www.instagram.com/aura.studioarq/" target="_blank" rel="noreferrer">Instagram ↗</a></div>
+      </div>
+    </div>
+    <form id="form" novalidate>
+      <div class="row2">
+        <div class="field"><input id="f1" placeholder=" " required><label for="f1">Nombre</label></div>
+        <div class="field"><input id="f2" type="email" placeholder=" " required><label for="f2">Correo</label></div>
+      </div>
+      <div class="field">
+        <select id="f3" aria-label="Tipo de proyecto">
+          <option>Arquitectura</option><option>Diseño interior</option><option>Visualización 3D</option><option>Dirección creativa</option>
+        </select>
+      </div>
+      <div class="field"><textarea id="f4" placeholder=" "></textarea><label for="f4">Cuéntanos sobre tu proyecto</label></div>
+      <button class="btn-card" type="submit">Enviar mensaje
+        <svg width="11" height="11" viewBox="0 0 11 11"><path d="M1 10L10 1M3 1h7v7" fill="none" stroke="currentColor" stroke-width="1.1"/></svg>
+      </button>
+      <div class="sent" id="sent"></div>
+    </form>
+  </div>
+</section>
+<footer>
+  <div class="foot big">Aura<small>Arquitectura · Interiorismo<br>Visualización 3D</small></div>
+  <div class="foot">
+    <span>© 2026 Aura Studio Arq · Lima, Perú</span>
+    <div class="socials"><a href="https://www.instagram.com/aura.studioarq/" target="_blank" rel="noreferrer">Instagram</a><a href="mailto:hola@aurastudioarq.com">hola@aurastudioarq.com</a></div>
+    <a href="#inicio">Volver arriba ↑</a>
+  </div>
+</footer>
+<div class="modal" id="modal" role="dialog" aria-modal="true" aria-label="Detalle del proyecto">
+  <button class="modal-close" id="mClose" aria-label="Cerrar"><svg width="14" height="14" viewBox="0 0 14 14"><path d="M1 1l12 12M13 1L1 13" stroke="currentColor" stroke-width="1.3"/></svg></button>
+  <div class="modal-inner">
+    <img id="mImg" alt="">
+    <div>
+      <div class="eyebrow" id="mMeta"></div>
+      <h3 id="mTitle"></h3>
+      <p class="tagline" id="mTag"></p>
+      <div id="mDesc"></div>
+      <dl id="mFacts"></dl>
+      <div class="modal-nav"><button id="mPrev">← Anterior</button><button id="mNext">Siguiente →</button></div>
+    </div>
+  </div>
+</div>
+<script>
+const projects=[
+  {t:"Casa Travertino",y:"2024",place:"Asia, Lima",tag:"Residencial",img:"assets/p1.webp",size:"c-tall",
+   tagline:"Un refugio pétreo sobre la ladera, donde la masa material ancla el paisaje.",
+   d:["Refugio de fin de semana sobre una pendiente arbolada. La planta baja se asienta como un zócalo de concreto y piedra; el volumen superior, revestido en madera, se libera para capturar la última luz del día.","El proyecto articula el habitar contemporáneo con la materialidad local: travertino sin pulir, concreto aparente, robles de la región. Cada decisión busca disolver la frontera entre arquitectura y paisaje."],
+   f:[["Superficie","320 m²"],["Tipología","Vivienda unifamiliar"],["Estado","Construido"]]},
+  {t:"Cocina Roble",y:"2024",place:"San Isidro, Lima",tag:"Interiorismo",img:"assets/p2.webp",size:"c-wide",
+   tagline:"Una reinterpretación silenciosa de la cocina como corazón doméstico.",
+   d:["Reinterpretación de una cocina familiar a partir de carpintería en roble blanco, mármol calacatta y herrajes en bronce envejecido.","La isla central, monolítica, ordena el espacio. El despiece de los gabinetes oculta los electrodomésticos y convierte el muro en una superficie continua, casi escultórica."],
+   f:[["Superficie","42 m²"],["Materiales","Roble, calacatta, bronce"],["Estado","Construido"]]},
+  {t:"Casa Lino",y:"2023",place:"La Molina, Lima",tag:"Interiorismo",img:"assets/p4.webp",size:"c-wide",
+   tagline:"Una recámara concebida como retiro: textura, luz cruda y silencio.",
+   d:["Recámara principal de una casa de campo. La paleta cruda —lino, cal, roble— acompaña el ritmo lento del lugar.","La carpintería integral disuelve el almacenaje y permite que el espacio respire alrededor de la cama, única protagonista."],
+   f:[["Programa","Recámara principal"],["Materiales","Lino, cal, roble"],["Estado","Construido"]]},
+  {t:"Galería Cenital",y:"2023",place:"Barranco, Lima",tag:"Cultural",img:"assets/p3.webp",size:"c-tall",
+   tagline:"Un espacio expositivo bañado por luz cenital que ordena la mirada.",
+   d:["Diseño interior de una galería de escultura contemporánea. Muros de cal blanca, piso de concreto pulido y un gran lucernario que articula el recorrido entre piezas.","El proyecto trabaja la luz natural como material protagónico: la geometría del lucernario filtra la luz limeña y la convierte en atmósfera silenciosa."],
+   f:[["Superficie","260 m²"],["Programa","Galería de arte"],["Estado","Construido"]]},
+  {t:"Stand FIL",y:"2024",place:"Jockey Club, Lima",tag:"Efímero",img:"assets/p5.webp",size:"c-tall",
+   tagline:"Stand editorial para la Feria Internacional del Libro de Lima.",
+   d:["Diseño de stand para una editorial de arquitectura en la FIL Lima. Muros revestidos en madera clara, repisas continuas iluminadas y un mostrador escultórico de roble.","El módulo se concibe como una pequeña biblioteca portátil: la curaduría del libro y la luz cálida construyen una pausa silenciosa dentro del bullicio de la feria."],
+   f:[["Evento","FIL Lima"],["Materiales","Madera clara, roble"],["Tipo","Efímero"]]},
+  {t:"Bar Arcos",y:"2024",place:"Barranco, Lima",tag:"Comercial",img:"assets/p6-card.webp",size:"c-wide",
+   tagline:"Una sucesión de arcos que ordena la atmósfera nocturna.",
+   d:["Bar de autor articulado por arcos sucesivos en microcemento. La iluminación escultórica y el mobiliario hecho a medida construyen una atmósfera cálida e introspectiva.","El programa se resuelve en una planta libre con barra central, gabinetes laterales y un comedor privado al fondo."],
+   f:[["Programa","Bar y comedor"],["Materiales","Microcemento, madera"],["Estado","Construido"]]}
+];
+const grid=document.getElementById('pfGrid');
+grid.innerHTML=projects.map((p,i)=>`
+  <button class="card ${p.size} reveal" data-cat="${p.tag}" data-i="${i}" aria-label="Ver ${p.t}">
+    <span class="tag">${p.tag}</span>
+    <div class="img"><img src="${p.img}" alt="${p.t}, ${p.place}" loading="lazy"></div>
+    <div class="cap"><h4>${p.t}</h4><span>${p.place} · ${p.y}</span></div>
+  </button>`).join('');
+document.getElementById('filters').addEventListener('click',e=>{
+  const b=e.target.closest('button'); if(!b) return;
+  document.querySelectorAll('#filters button').forEach(x=>x.classList.toggle('on',x===b));
+  grid.querySelectorAll('.card').forEach(c=>c.classList.toggle('hide',b.dataset.f!=='all'&&c.dataset.cat!==b.dataset.f));
+});
+const modal=document.getElementById('modal');let cur=0;
+function openP(i){
+  cur=(i+projects.length)%projects.length;const p=projects[cur];
+  document.getElementById('mImg').src=p.img;document.getElementById('mImg').alt=p.t;
+  document.getElementById('mMeta').textContent=`${p.tag} · ${p.place} · ${p.y}`;
+  document.getElementById('mTitle').textContent=p.t;
+  document.getElementById('mTag').textContent=p.tagline;
+  document.getElementById('mDesc').innerHTML=p.d.map(x=>`<p class="d">${x}</p>`).join('');
+  document.getElementById('mFacts').innerHTML=p.f.map(([k,v])=>`<div><dt>${k}</dt><dd>${v}</dd></div>`).join('');
+  modal.classList.add('open');modal.scrollTop=0;document.body.style.overflow='hidden';
+}
+function closeP(){modal.classList.remove('open');document.body.style.overflow='';}
+grid.addEventListener('click',e=>{const c=e.target.closest('.card');if(c)openP(+c.dataset.i)});
+document.getElementById('mClose').onclick=closeP;
+document.getElementById('mPrev').onclick=()=>openP(cur-1);
+document.getElementById('mNext').onclick=()=>openP(cur+1);
+modal.addEventListener('click',e=>{if(e.target===modal||e.target.classList.contains('modal-inner'))closeP()});
+document.addEventListener('keydown',e=>{if(!modal.classList.contains('open'))return;if(e.key==='Escape')closeP();if(e.key==='ArrowRight')openP(cur+1);if(e.key==='ArrowLeft')openP(cur-1)});
+const io=new IntersectionObserver(es=>es.forEach(en=>{
+  if(!en.isIntersecting) return;
+  en.target.classList.add('in');
+  const n=en.target.querySelector('[data-count]');
+  if(n&&!n.dataset.plain&&!n.done){n.done=1;const t=+n.dataset.count,pre=n.dataset.prefix||'',pad=+(n.dataset.pad||0);let st=null;
+    const step=ts=>{st=st||ts;const k=Math.min((ts-st)/1500,1);n.textContent=pre+String(Math.round(t*(1-Math.pow(1-k,3)))).padStart(pad,'0');if(k<1)requestAnimationFrame(step)};requestAnimationFrame(step);}
+  io.unobserve(en.target);
+}),{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+document.querySelectorAll('nav.top ul a').forEach(a=>a.addEventListener('click',()=>document.getElementById('nav').classList.remove('open')));
+document.getElementById('form').addEventListener('submit',e=>{
+  e.preventDefault();
+  const name=document.getElementById('f1').value.trim(),mail=document.getElementById('f2').value.trim(),
+        type=document.getElementById('f3').value,msg=document.getElementById('f4').value.trim(),out=document.getElementById('sent');
+  if(!name||!/\S+@\S+\.\S+/.test(mail)){out.textContent='Por favor completa tu nombre y un correo válido.';return;}
+  const body=`Nombre: ${name}\nCorreo: ${mail}\nServicio: ${type}\n\n${msg}`;
+  location.href=`mailto:hola@aurastudioarq.com?subject=${encodeURIComponent('Nuevo proyecto — '+type)}&body=${encodeURIComponent(body)}`;
+  out.textContent='Abriendo tu correo… Si no se abre, escríbenos a hola@aurastudioarq.com';
+});
+</script>
+</body>
+</html>
