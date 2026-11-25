@@ -3,10 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Aura Studio Arq — Arquitectura, interiorismo y visualización 3D</title>
-<meta name="description" content="Estudio de arquitectura, interiorismo y visualización 3D en Lima, Perú. Diseño contemporáneo con enfoque en estética, funcionalidad y narrativa espacial.">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 32 32%22%3E%3Crect width=%2232%22 height=%2232%22 fill=%22%231d1b19%22/%3E%3Ctext x=%2216%22 y=%2222%22 font-size=%2216%22 text-anchor=%22middle%22 fill=%22%23e9e4dc%22 font-family=%22sans-serif%22%3EA%3C/text%3E%3C/svg%3E">
-<link rel="preload" as="image" href="assets/p6.webp">
+<title>Aura Studio Arq — Arquitectura e Interiores · Lima</title>
+<meta name="description" content="Aura Studio Arquitectura: arquitectura e interiores en Lima. Delicadeza, confort y cercanía. Diseñamos espacios con alma, marca y propósito.">
+<link rel="icon" href="assets/logo.webp">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500&family=Cormorant+Garamond:ital,wght@1,300;1,400&display=swap" rel="stylesheet">
@@ -40,7 +39,9 @@ em.serif{font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:30
   linear-gradient(0deg,rgba(18,15,12,.6),transparent 40%)}
 nav.top{position:absolute;top:0;left:0;right:0;z-index:5;display:flex;justify-content:space-between;align-items:center;padding:30px var(--pad) 22px;font-size:11px;letter-spacing:.14em;text-transform:uppercase}
 nav.top::after{content:"";position:absolute;left:var(--pad);right:var(--pad);bottom:0;height:1px;background:var(--line)}
-nav.top .logo{font-weight:400;letter-spacing:.2em}
+nav.top .logo{display:flex;align-items:center;gap:12px;font-weight:400;letter-spacing:.2em}
+nav.top .logo img{width:30px;height:30px;border-radius:50%}
+.nav-ig{display:inline-flex;align-items:center;gap:8px}
 nav.top ul{display:flex;gap:clamp(18px,3.4vw,52px);list-style:none}
 nav.top ul a{position:relative;opacity:.9}
 nav.top ul a::after{content:"";position:absolute;left:0;bottom:-6px;width:0;height:1px;background:#fff;transition:width .35s}
@@ -75,13 +76,13 @@ nav.top ul a:hover::after{width:100%}
 .stat{padding:26px 0 0 24px;border-right:1px solid #d9d3ca}
 .stat:first-child{padding-left:0}
 .stat:last-child{border-right:0}
-.stat b{display:block;font-weight:200;font-size:clamp(40px,4.6vw,72px);line-height:1}
-.stat span{font-size:12px;color:var(--muted);letter-spacing:.05em}
+.stat b{display:block;font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:300;font-size:clamp(30px,3vw,46px);line-height:1}
+.stat span{display:block;margin-top:10px;font-size:12.5px;line-height:1.6;color:var(--muted)}
 .services{background:var(--ink);color:var(--sand);padding:clamp(80px,10vw,140px) 0}
 .services .eyebrow{color:#a39b91}
 .services-head{display:flex;justify-content:space-between;align-items:flex-end;gap:40px;margin-bottom:60px;flex-wrap:wrap}
 .services-head p{max-width:360px;font-size:14px;line-height:1.7;color:#a39b91}
-.svc{display:grid;grid-template-columns:80px 1fr 1.2fr 60px;align-items:center;gap:30px;padding:34px 0;border-top:1px solid #3a3632}
+.svc{color:inherit;cursor:pointer;display:grid;grid-template-columns:80px 1fr 1.2fr 60px;align-items:center;gap:30px;padding:34px 0;border-top:1px solid #3a3632}
 .svc:last-child{border-bottom:1px solid #3a3632}
 .svc .n{font-size:12px;color:#7d756c;letter-spacing:.1em}
 .svc h3{font-weight:300;font-size:clamp(22px,2.4vw,34px);text-transform:uppercase;letter-spacing:.01em;transition:transform .4s}
@@ -112,7 +113,7 @@ nav.top ul a:hover::after{width:100%}
 .modal{position:fixed;inset:0;z-index:50;background:#171310;color:var(--sand);display:none;overflow-y:auto}
 .modal.open{display:block;animation:fade .4s forwards}
 .modal-inner{display:grid;grid-template-columns:1.3fr 1fr;gap:5vw;padding:90px var(--pad) 70px;min-height:100%;align-items:center}
-.modal img{width:100%;max-height:78vh;object-fit:cover}
+.modal .m-main{width:100%;height:auto;max-height:78vh;object-fit:contain;object-position:left center}
 .modal .eyebrow{color:#a39b91}
 .modal h3{font-weight:300;text-transform:uppercase;font-size:clamp(34px,4vw,60px);line-height:1;margin:20px 0 18px}
 .modal .tagline{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(20px,1.8vw,26px);line-height:1.35;color:#e4d9c9;margin-bottom:24px}
@@ -123,7 +124,19 @@ nav.top ul a:hover::after{width:100%}
 .modal-close{position:fixed;top:24px;right:var(--pad);width:46px;height:46px;border-radius:50%;background:#fff;color:var(--ink);border:0;cursor:pointer;display:grid;place-items:center;z-index:2}
 .modal-nav{display:flex;gap:10px;margin-top:34px}
 .modal-nav button{font:inherit;font-size:11px;letter-spacing:.14em;text-transform:uppercase;background:none;color:var(--sand);border:1px solid #4a4540;padding:12px 18px;border-radius:40px;cursor:pointer}
-.modal-nav button:hover{background:var(--sand);color:var(--ink)}
+.modal-nav button:hover,.modal-nav a:hover{background:var(--sand);color:var(--ink)}
+.modal-nav a{font:inherit;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--sand);border:1px solid #4a4540;padding:12px 18px;border-radius:40px}
+.m-thumbs{display:flex;gap:10px;margin-top:12px}
+.m-thumbs img{width:76px;height:76px;object-fit:cover;cursor:pointer;opacity:.55;transition:opacity .3s}
+.m-thumbs img.on,.m-thumbs img:hover{opacity:1}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:24px}
+.chips span{font-size:11px;letter-spacing:.1em;text-transform:uppercase;border:1px solid #4a4540;padding:8px 12px;border-radius:30px;color:#d9ccbc}
+.svc:focus-visible{outline:1px solid var(--gold);outline-offset:4px}
+.ig-grid a::after{content:"Ver en Instagram ↗";position:absolute;left:0;right:0;bottom:0;padding:10px;font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:#fff;background:linear-gradient(0deg,rgba(0,0,0,.55),transparent);opacity:0;transition:opacity .4s}
+.ig-grid a:hover::after{opacity:1}
+.ig-follow{display:inline-flex;align-items:center;gap:12px;background:var(--ink);color:#fff;padding:16px 22px;font-size:11px;letter-spacing:.16em;text-transform:uppercase;transition:background .3s}
+.ig-follow:hover{background:var(--gold)}
+.ig-bio{font-size:14px;line-height:1.7;color:#55504a;max-width:420px;margin-top:14px}
 .ig{background:var(--sand);padding:clamp(80px,9vw,130px) 0}
 .ig-head{display:flex;justify-content:space-between;align-items:flex-end;gap:30px;flex-wrap:wrap;margin-bottom:44px}
 .ig-head h2{font-weight:300;font-size:clamp(34px,4.4vw,64px);line-height:1;margin-top:22px}
@@ -171,8 +184,8 @@ footer{background:var(--ink);color:#8f877d;font-size:11px;letter-spacing:.14em;t
   .svc p{display:none}
   .pf-grid>.card{grid-column:span 12}
   .ig-grid{grid-template-columns:repeat(3,1fr)}
-  .stats{grid-template-columns:repeat(3,1fr)}
-  .stat{padding-left:14px}
+  .stats{grid-template-columns:1fr}
+  .stat{padding-left:0;border-right:0;border-bottom:1px solid #d9d3ca;padding-bottom:20px}
   .info{grid-template-columns:1fr;gap:22px}
   .row2{grid-template-columns:1fr}
   .foot.big small{display:none}
@@ -181,14 +194,14 @@ footer{background:var(--ink);color:#8f877d;font-size:11px;letter-spacing:.14em;t
 </head>
 <body>
 <header class="hero" id="inicio">
-  <img src="assets/p6.webp" alt="Bar Arcos, Barranco — interior con arcos de microcemento" fetchpriority="high">
+  <img src="assets/3.webp" alt="Vallejo Librería Café — diseño interior de Aura Studio Arq" fetchpriority="high">
   <nav class="top" id="nav">
-    <a href="#inicio" class="logo">AURA&nbsp;STUDIO&nbsp;ARQ</a>
+    <a href="#inicio" class="logo"><img src="assets/logo.webp" alt="">AURA&nbsp;STUDIO&nbsp;ARQ</a>
     <ul>
       <li><a href="#estudio">Estudio</a></li>
       <li><a href="#servicios">Servicios</a></li>
       <li><a href="#proyectos">Proyectos</a></li>
-      <li><a href="#diario">Diario</a></li>
+      <li><a href="#instagram">Instagram</a></li>
       <li><a href="#contacto">Contacto</a></li>
     </ul>
     <button class="burger" aria-label="Menú" onclick="document.getElementById('nav').classList.toggle('open')">
@@ -196,9 +209,9 @@ footer{background:var(--ink);color:#8f877d;font-size:11px;letter-spacing:.14em;t
     </button>
   </nav>
   <div class="hero-content">
-    <h1><span><i>Arquitectura</i></span><span><i>Interiorismo</i></span><span><i>Visión 3D</i></span></h1>
+    <h1><span><i>Arte</i></span><span><i>Diseño</i></span><span><i>Arquitectura</i></span></h1>
     <div class="hero-side">
-      <p>Aura Studio Arq es un estudio multidisciplinario dedicado al diseño de espacios con narrativa, atmósfera y propósito.</p>
+      <p>Delicadeza, confort y cercanía son algunas palabras que nos caracterizan. Diseñamos espacios con alma, marca y propósito.</p>
       <a href="#proyectos" class="btn-card">Proyectos
         <svg width="11" height="11" viewBox="0 0 11 11"><path d="M1 10L10 1M3 1h7v7" fill="none" stroke="currentColor" stroke-width="1.1"/></svg>
       </a>
@@ -207,81 +220,81 @@ footer{background:var(--ink);color:#8f877d;font-size:11px;letter-spacing:.14em;t
   <a href="#estudio" class="scroll-btn" aria-label="Bajar">
     <svg width="10" height="14" viewBox="0 0 10 14"><path d="M5 0v13M1 9l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.1"/></svg>
   </a>
-  <div class="hero-meta">Estudio · Lima, Perú</div>
+  <div class="hero-meta">Arquitectura · Interiores — Lima, Perú</div>
 </header>
 <section class="intro wrap" id="estudio">
   <div class="intro-grid">
     <div>
       <div class="eyebrow reveal">01 — El estudio</div>
-      <h2 class="reveal">Diseñamos espacios que se habitan despacio, <em class="serif">con materia, luz y silencio.</em></h2>
+      <h2 class="reveal">Creamos espacios con intención, identidad y emoción, <em class="serif">donde el diseño no solo se ve: se siente.</em></h2>
       <div class="copy reveal">
-        <p>Aura es un estudio dedicado a la arquitectura, el interiorismo y la visualización arquitectónica. Cada proyecto nace de una lectura cuidadosa del lugar, del cliente y de la luz que lo atraviesa.</p>
-        <p>Trabajamos en la frontera entre estética y función, entre la narrativa y la materia. Buscamos espacios donde la simplicidad sea radical y la atmósfera, inevitable.</p>
+        <p>Aura Studio Arquitectura es un estudio de arquitectura e interiores en Lima. Acompañamos cada proyecto desde la primera idea hasta la instalación.</p>
+        <p>Cuidamos la luz, las texturas, el color y cada rincón para que invite a quedarse. Aura es arte, diseño y arquitectura.</p>
       </div>
       <div class="stats">
-        <div class="stat reveal"><b data-count="2019" data-plain="1">2019</b><span>Fundado</span></div>
-        <div class="stat reveal"><b data-count="40" data-prefix="+">+40</b><span>Proyectos</span></div>
-        <div class="stat reveal"><b data-count="4" data-pad="2">04</b><span>Disciplinas</span></div>
+        <div class="stat reveal"><b>Delicadeza</b><span>Paletas suaves, materiales nobles y luz cálida.</span></div>
+        <div class="stat reveal"><b>Confort</b><span>Espacios funcionales, hechos para vivirse.</span></div>
+        <div class="stat reveal"><b>Cercanía</b><span>Diseñamos contigo, escuchando cómo vives.</span></div>
       </div>
     </div>
     <figure class="reveal">
-      <img src="assets/about.webp" alt="Paleta material del proyecto Casa Travertino" loading="lazy">
-      <figcaption>Detalle de obra — Casa Travertino, 2024</figcaption>
+      <img src="assets/2.webp" alt="Vallejo Librería Café — interior" loading="lazy">
+      <figcaption>Vallejo Librería Café</figcaption>
     </figure>
   </div>
 </section>
 <section class="services" id="servicios">
   <div class="wrap">
     <div class="services-head">
-      <div><div class="eyebrow">02 — Servicios</div><h2 class="h2 reveal">Una práctica multidisciplinaria</h2></div>
-      <p class="reveal">Cuatro disciplinas conviven en el estudio bajo una misma sensibilidad editorial.</p>
+      <div><div class="eyebrow">02 — Servicios</div><h2 class="h2 reveal">Lo que hacemos</h2></div>
+      <p class="reveal">Del diseño a la instalación: te ayudamos a hacer realidad tu espacio, sea un hogar, un local o una sola habitación. Elige un servicio para cotizarlo.</p>
     </div>
-    <div class="svc reveal"><span class="n">01</span><h3>Arquitectura</h3><p>Proyecto integral desde el concepto hasta la obra terminada. Vivienda, comercial y cultural.</p><span class="arr"><svg width="12" height="12" viewBox="0 0 12 12"><path d="M0 6h11M7 2l4 4-4 4" fill="none" stroke="currentColor"/></svg></span></div>
-    <div class="svc reveal"><span class="n">02</span><h3>Diseño interior</h3><p>Espacios habitados con carácter: paleta material, mobiliario a medida y curaduría editorial.</p><span class="arr"><svg width="12" height="12" viewBox="0 0 12 12"><path d="M0 6h11M7 2l4 4-4 4" fill="none" stroke="currentColor"/></svg></span></div>
-    <div class="svc reveal"><span class="n">03</span><h3>Visualización 3D</h3><p>Renders fotorrealistas y recorridos virtuales para anticipar la atmósfera del proyecto.</p><span class="arr"><svg width="12" height="12" viewBox="0 0 12 12"><path d="M0 6h11M7 2l4 4-4 4" fill="none" stroke="currentColor"/></svg></span></div>
-    <div class="svc reveal"><span class="n">04</span><h3>Dirección creativa</h3><p>Acompañamiento estratégico para marcas, desarrolladores y proyectos hospitality.</p><span class="arr"><svg width="12" height="12" viewBox="0 0 12 12"><path d="M0 6h11M7 2l4 4-4 4" fill="none" stroke="currentColor"/></svg></span></div>
+    <a class="svc reveal" href="#contacto" data-svc="Diseño interior" aria-label="Cotizar Diseño interior"><span class="n">01</span><h3>Diseño interior</h3><p>Ambientes con identidad: paleta de color, mobiliario a medida, iluminación y vegetación integrados al espacio.</p><span class="arr"><svg width="12" height="12" viewBox="0 0 12 12"><path d="M0 6h11M7 2l4 4-4 4" fill="none" stroke="currentColor"/></svg></span></a>
+    <a class="svc reveal" href="#contacto" data-svc="Arquitectura" aria-label="Cotizar Arquitectura"><span class="n">02</span><h3>Arquitectura</h3><p>Diseño de arquitectura y diseño interior para viviendas y locales comerciales, con propuestas en 3D.</p><span class="arr"><svg width="12" height="12" viewBox="0 0 12 12"><path d="M0 6h11M7 2l4 4-4 4" fill="none" stroke="currentColor"/></svg></span></a>
+    <a class="svc reveal" href="#contacto" data-svc="Remodelación" aria-label="Cotizar Remodelación"><span class="n">03</span><h3>Remodelación</h3><p>Baños, cocinas, dormitorios y home office: transformamos espacios pequeños en lugares funcionales y con estilo.</p><span class="arr"><svg width="12" height="12" viewBox="0 0 12 12"><path d="M0 6h11M7 2l4 4-4 4" fill="none" stroke="currentColor"/></svg></span></a>
+    <a class="svc reveal" href="#contacto" data-svc="Espacios infantiles" aria-label="Cotizar Espacios infantiles"><span class="n">04</span><h3>Espacios infantiles</h3><p>Dormitorios y salas de juego personalizados que acompañan cada etapa de crecimiento.</p><span class="arr"><svg width="12" height="12" viewBox="0 0 12 12"><path d="M0 6h11M7 2l4 4-4 4" fill="none" stroke="currentColor"/></svg></span></a>
+    <a class="svc reveal" href="#contacto" data-svc="Asesoría personalizada" aria-label="Cotizar Asesoría personalizada"><span class="n">05</span><h3>Asesoría personalizada</h3><p>Ideas concretas para mejorar tu espacio sin grandes obras. A veces no necesitas botar paredes.</p><span class="arr"><svg width="12" height="12" viewBox="0 0 12 12"><path d="M0 6h11M7 2l4 4-4 4" fill="none" stroke="currentColor"/></svg></span></a>
   </div>
 </section>
 <section class="portfolio wrap" id="proyectos">
   <div class="pf-head">
-    <div><div class="eyebrow">03 — Proyectos seleccionados</div><h2 class="h2 reveal">Obras recientes</h2></div>
+    <div><div class="eyebrow">03 — Proyectos</div><h2 class="h2 reveal">Nuestro trabajo</h2></div>
     <div class="filters" id="filters">
       <button class="on" data-f="all">Todos</button>
-      <button data-f="Residencial">Residencial</button>
-      <button data-f="Interiorismo">Interiorismo</button>
       <button data-f="Comercial">Comercial</button>
-      <button data-f="Cultural">Cultural</button>
-      <button data-f="Efímero">Efímero</button>
+      <button data-f="Residencial">Residencial</button>
+      <button data-f="Infantil">Infantil</button>
+      <button data-f="Remodelación">Remodelación</button>
     </div>
   </div>
   <div class="pf-grid" id="pfGrid"></div>
 </section>
-<section class="ig" id="diario">
+<section class="ig" id="instagram">
   <div class="wrap">
     <div class="ig-head">
-      <div><div class="eyebrow">04 — Diario visual</div><h2 class="reveal">@aura.studioarq</h2></div>
-      <a class="link-line" href="https://www.instagram.com/aura.studioarq/" target="_blank" rel="noreferrer">Seguir en Instagram ↗</a>
+      <div><div class="eyebrow">04 — Síguenos</div><h2 class="reveal">@aura.studioarq</h2><p class="ig-bio">Proyectos, procesos, moodboards y tips de diseño. Arquitectura | Interiores.</p></div>
+      <a class="ig-follow" href="https://www.instagram.com/aura.studioarq/" target="_blank" rel="noreferrer"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg> Seguir en Instagram</a>
     </div>
     <div class="ig-grid">
-      <a class="reveal" href="https://www.instagram.com/aura.studioarq/" target="_blank" rel="noreferrer"><img src="assets/ig-project-2.webp" alt="Cocina Roble" loading="lazy"></a>
-      <a class="reveal" href="https://www.instagram.com/aura.studioarq/" target="_blank" rel="noreferrer"><img src="assets/ig-project-5.webp" alt="Stand FIL" loading="lazy"></a>
-      <a class="reveal" href="https://www.instagram.com/aura.studioarq/" target="_blank" rel="noreferrer"><img src="assets/ig-project-1.webp" alt="Casa Travertino" loading="lazy"></a>
-      <a class="reveal" href="https://www.instagram.com/aura.studioarq/" target="_blank" rel="noreferrer"><img src="assets/ig-project-6.webp" alt="Bar Arcos" loading="lazy"></a>
-      <a class="reveal" href="https://www.instagram.com/aura.studioarq/" target="_blank" rel="noreferrer"><img src="assets/ig-project-4.webp" alt="Casa Lino" loading="lazy"></a>
-      <a class="reveal" href="https://www.instagram.com/aura.studioarq/" target="_blank" rel="noreferrer"><img src="assets/ig-project-3.webp" alt="Galería Cenital" loading="lazy"></a>
+      <a class="reveal" href="https://www.instagram.com/aura.studioarq/p/DMtBJ5YJuoD/" target="_blank" rel="noreferrer"><img src="assets/5.webp" alt="Sala de juegos" loading="lazy"></a>
+      <a class="reveal" href="https://www.instagram.com/aura.studioarq/p/DMiOPUNsnOH/" target="_blank" rel="noreferrer"><img src="assets/6.webp" alt="Dormitorio de Santiago" loading="lazy"></a>
+      <a class="reveal" href="https://www.instagram.com/aura.studioarq/p/DMyRivRpoId/" target="_blank" rel="noreferrer"><img src="assets/4.webp" alt="3 trucos para tu sala" loading="lazy"></a>
+      <a class="reveal" href="https://www.instagram.com/aura.studioarq/p/DMO0jtVMvMZ/" target="_blank" rel="noreferrer"><img src="assets/8.webp" alt="Baño minimalista" loading="lazy"></a>
+      <a class="reveal" href="https://www.instagram.com/aura.studioarq/p/CpWKh8XJQWG/" target="_blank" rel="noreferrer"><img src="assets/9.webp" alt="Terraza familiar" loading="lazy"></a>
+      <a class="reveal" href="https://www.instagram.com/aura.studioarq/p/CovQQVDJJRM/" target="_blank" rel="noreferrer"><img src="assets/12.webp" alt="Cocina: propuesta de diseño" loading="lazy"></a>
     </div>
   </div>
 </section>
 <section class="contact" id="contacto">
-  <img src="assets/hero.webp" alt="" loading="lazy">
+  <img src="assets/10.webp" alt="" loading="lazy">
   <div class="contact-inner">
     <div>
       <div class="eyebrow">05 — Contacto</div>
-      <h2 class="reveal">Hablemos de<br>tu próximo<br>espacio</h2>
+      <h2 class="reveal">¿Quieres que<br>tu proyecto<br>hable por ti?</h2>
       <div class="info">
-        <div><small>Email</small><a href="mailto:hola@aurastudioarq.com">hola@aurastudioarq.com</a></div>
+        <div><small>Email</small><a href="mailto:aura.studioarquitectura@gmail.com">aura.studioarquitectura@gmail.com</a></div>
         <div><small>Estudio</small>Lima, Perú</div>
-        <div><small>Social</small><a href="https://www.instagram.com/aura.studioarq/" target="_blank" rel="noreferrer">Instagram ↗</a></div>
+        <div><small>Instagram</small><a href="https://www.instagram.com/aura.studioarq/" target="_blank" rel="noreferrer">@aura.studioarq ↗</a></div>
       </div>
     </div>
     <form id="form" novalidate>
@@ -290,12 +303,12 @@ footer{background:var(--ink);color:#8f877d;font-size:11px;letter-spacing:.14em;t
         <div class="field"><input id="f2" type="email" placeholder=" " required><label for="f2">Correo</label></div>
       </div>
       <div class="field">
-        <select id="f3" aria-label="Tipo de proyecto">
-          <option>Arquitectura</option><option>Diseño interior</option><option>Visualización 3D</option><option>Dirección creativa</option>
+        <select id="f3" aria-label="Servicio">
+          <option>Diseño interior</option><option>Arquitectura</option><option>Remodelación</option><option>Espacios infantiles</option><option>Asesoría personalizada</option>
         </select>
       </div>
-      <div class="field"><textarea id="f4" placeholder=" "></textarea><label for="f4">Cuéntanos sobre tu proyecto</label></div>
-      <button class="btn-card" type="submit">Enviar mensaje
+      <div class="field"><textarea id="f4" placeholder=" "></textarea><label for="f4">Cuéntanos sobre tu espacio</label></div>
+      <button class="btn-card" type="submit">Conversemos
         <svg width="11" height="11" viewBox="0 0 11 11"><path d="M1 10L10 1M3 1h7v7" fill="none" stroke="currentColor" stroke-width="1.1"/></svg>
       </button>
       <div class="sent" id="sent"></div>
@@ -303,93 +316,101 @@ footer{background:var(--ink);color:#8f877d;font-size:11px;letter-spacing:.14em;t
   </div>
 </section>
 <footer>
-  <div class="foot big">Aura<small>Arquitectura · Interiorismo<br>Visualización 3D</small></div>
+  <div class="foot big">Aura<small>Arte · Diseño<br>Arquitectura</small></div>
   <div class="foot">
-    <span>© 2026 Aura Studio Arq · Lima, Perú</span>
-    <div class="socials"><a href="https://www.instagram.com/aura.studioarq/" target="_blank" rel="noreferrer">Instagram</a><a href="mailto:hola@aurastudioarq.com">hola@aurastudioarq.com</a></div>
+    <span>© 2026 Aura Studio Arquitectura · Lima, Perú</span>
+    <div class="socials"><a class="nav-ig" href="https://www.instagram.com/aura.studioarq/" target="_blank" rel="noreferrer"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg> Instagram</a><a href="mailto:aura.studioarquitectura@gmail.com">Email</a></div>
     <a href="#inicio">Volver arriba ↑</a>
   </div>
 </footer>
 <div class="modal" id="modal" role="dialog" aria-modal="true" aria-label="Detalle del proyecto">
   <button class="modal-close" id="mClose" aria-label="Cerrar"><svg width="14" height="14" viewBox="0 0 14 14"><path d="M1 1l12 12M13 1L1 13" stroke="currentColor" stroke-width="1.3"/></svg></button>
   <div class="modal-inner">
-    <img id="mImg" alt="">
+    <div><img class="m-main" id="mImg" alt=""><div class="m-thumbs" id="mThumbs"></div></div>
     <div>
       <div class="eyebrow" id="mMeta"></div>
       <h3 id="mTitle"></h3>
       <p class="tagline" id="mTag"></p>
       <div id="mDesc"></div>
-      <dl id="mFacts"></dl>
-      <div class="modal-nav"><button id="mPrev">← Anterior</button><button id="mNext">Siguiente →</button></div>
+      <div class="chips" id="mChips"></div>
+      <div class="modal-nav"><button id="mPrev">← Anterior</button><button id="mNext">Siguiente →</button><a id="mIg" target="_blank" rel="noreferrer">Ver en Instagram ↗</a></div>
     </div>
   </div>
 </div>
 <script>
+const IG="https://www.instagram.com/aura.studioarq/p/";
 const projects=[
-  {t:"Casa Travertino",y:"2024",place:"Asia, Lima",tag:"Residencial",img:"assets/p1.webp",size:"c-tall",
-   tagline:"Un refugio pétreo sobre la ladera, donde la masa material ancla el paisaje.",
-   d:["Refugio de fin de semana sobre una pendiente arbolada. La planta baja se asienta como un zócalo de concreto y piedra; el volumen superior, revestido en madera, se libera para capturar la última luz del día.","El proyecto articula el habitar contemporáneo con la materialidad local: travertino sin pulir, concreto aparente, robles de la región. Cada decisión busca disolver la frontera entre arquitectura y paisaje."],
-   f:[["Superficie","320 m²"],["Tipología","Vivienda unifamiliar"],["Estado","Construido"]]},
-  {t:"Cocina Roble",y:"2024",place:"San Isidro, Lima",tag:"Interiorismo",img:"assets/p2.webp",size:"c-wide",
-   tagline:"Una reinterpretación silenciosa de la cocina como corazón doméstico.",
-   d:["Reinterpretación de una cocina familiar a partir de carpintería en roble blanco, mármol calacatta y herrajes en bronce envejecido.","La isla central, monolítica, ordena el espacio. El despiece de los gabinetes oculta los electrodomésticos y convierte el muro en una superficie continua, casi escultórica."],
-   f:[["Superficie","42 m²"],["Materiales","Roble, calacatta, bronce"],["Estado","Construido"]]},
-  {t:"Casa Lino",y:"2023",place:"La Molina, Lima",tag:"Interiorismo",img:"assets/p4.webp",size:"c-wide",
-   tagline:"Una recámara concebida como retiro: textura, luz cruda y silencio.",
-   d:["Recámara principal de una casa de campo. La paleta cruda —lino, cal, roble— acompaña el ritmo lento del lugar.","La carpintería integral disuelve el almacenaje y permite que el espacio respire alrededor de la cama, única protagonista."],
-   f:[["Programa","Recámara principal"],["Materiales","Lino, cal, roble"],["Estado","Construido"]]},
-  {t:"Galería Cenital",y:"2023",place:"Barranco, Lima",tag:"Cultural",img:"assets/p3.webp",size:"c-tall",
-   tagline:"Un espacio expositivo bañado por luz cenital que ordena la mirada.",
-   d:["Diseño interior de una galería de escultura contemporánea. Muros de cal blanca, piso de concreto pulido y un gran lucernario que articula el recorrido entre piezas.","El proyecto trabaja la luz natural como material protagónico: la geometría del lucernario filtra la luz limeña y la convierte en atmósfera silenciosa."],
-   f:[["Superficie","260 m²"],["Programa","Galería de arte"],["Estado","Construido"]]},
-  {t:"Stand FIL",y:"2024",place:"Jockey Club, Lima",tag:"Efímero",img:"assets/p5.webp",size:"c-tall",
-   tagline:"Stand editorial para la Feria Internacional del Libro de Lima.",
-   d:["Diseño de stand para una editorial de arquitectura en la FIL Lima. Muros revestidos en madera clara, repisas continuas iluminadas y un mostrador escultórico de roble.","El módulo se concibe como una pequeña biblioteca portátil: la curaduría del libro y la luz cálida construyen una pausa silenciosa dentro del bullicio de la feria."],
-   f:[["Evento","FIL Lima"],["Materiales","Madera clara, roble"],["Tipo","Efímero"]]},
-  {t:"Bar Arcos",y:"2024",place:"Barranco, Lima",tag:"Comercial",img:"assets/p6-card.webp",size:"c-wide",
-   tagline:"Una sucesión de arcos que ordena la atmósfera nocturna.",
-   d:["Bar de autor articulado por arcos sucesivos en microcemento. La iluminación escultórica y el mobiliario hecho a medida construyen una atmósfera cálida e introspectiva.","El programa se resuelve en una planta libre con barra central, gabinetes laterales y un comedor privado al fondo."],
-   f:[["Programa","Bar y comedor"],["Materiales","Microcemento, madera"],["Estado","Construido"]]}
+  {t:"Vallejo Librería Café",tag:"Comercial",imgs:[3,2],ig:"DM9ZCMmMIWc",
+   tagline:"Un concepto donde la arquitectura abraza la lectura, el arte y el café.",
+   d:["Luz cálida, vegetación suspendida y texturas suaves que invitan a quedarse. Cada detalle fue pensado para provocar una pausa, una conversación, una inspiración.","Cortinas teatrales, tonos cálidos y líneas limpias que invitan al pensamiento y a la conversación. Cada rincón es una pausa estética."],
+   c:["Luz cálida","Vegetación suspendida","Texturas suaves"]},
+  {t:"Espacio Terracota",tag:"Comercial",imgs:[1],ig:"DNEIjf6pjdH",
+   tagline:"Diseño que respira, vibra y conecta.",
+   d:["Este proyecto nace de una idea simple: crear un lugar donde el diseño no solo se vea, se sienta.","La paleta terracota le da calidez a lo moderno, las texturas naturales equilibran la geometría y la vegetación no es decoración: es parte del ambiente. Cada mesa invita a una conversación, y cada rincón a quedarse un poco más."],
+   c:["Paleta terracota","Texturas naturales","Vegetación integrada"]},
+  {t:"Dormitorio de Santiago",tag:"Infantil",imgs:[6],ig:"DMiOPUNsnOH",
+   tagline:"Pensado para los sueños, la creatividad y el bienestar de Santiago.",
+   d:["Un lugar donde podrá jugar, aprender y descansar con total armonía."],
+   c:["Temática espacial personalizada","Mobiliario funcional y seguro","Estética cálida y moderna"]},
+  {t:"Sala de juegos",tag:"Infantil",imgs:[5],ig:"DMtBJ5YJuoD",
+   tagline:"Ambientes que acompañan cada etapa de crecimiento.",
+   d:["Una sala de juegos personalizada con elementos clave que favorecen la autonomía y estimulan la imaginación: zonas de lectura, juego libre y organización, con una paleta neutra y acentos lúdicos que no saturan, pero inspiran."],
+   c:["Zonificación inteligente","Almacenamiento accesible","Espacios sensoriales"]},
+  {t:"Home office",tag:"Residencial",imgs:[7],ig:"DMT6NDkJXuP",
+   tagline:"Espacios que inspiran productividad y estilo.",
+   d:["Un ambiente funcional, moderno y lleno de personalidad, perfecto para trabajar, estudiar o simplemente disfrutar del espacio. Del diseño a la instalación."],
+   c:["Diseño a medida","Mobiliario ergonómico","Estilo contemporáneo"]},
+  {t:"Baño minimalista",tag:"Remodelación",imgs:[8],ig:"DMO0jtVMvMZ",
+   tagline:"Un espacio pequeño convertido en un lugar funcional, moderno y lleno de estilo.",
+   d:["En cada detalle buscamos comodidad, armonía y diseño atemporal."],
+   c:["Diseño inteligente","Espacios bien aprovechados","Minimalista y cálido"]},
+  {t:"Terraza familiar",tag:"Residencial",imgs:[9,10],ig:"CpWKh8XJQWG",
+   tagline:"Amplia y confortable, para disfrutar junto a la familia y los amigos.",
+   d:["Un diseño de terraza que integra vegetación, comedor exterior y zonas de descanso para disfrutar al aire libre."],
+   c:["Comedor exterior","Vegetación","Confort"]},
+  {t:"Cocina abierta",tag:"Residencial",imgs:[11,12],ig:"CovQqU3JBFz",
+   tagline:"Diseño de arquitectura y diseño interior para el corazón de la casa.",
+   d:["Una cocina funcional con isla central, tonos claros y madera, pensada para cocinar y compartir."],
+   c:["Isla central","Madera y tonos claros","Funcional"]}
 ];
+const src=n=>`assets/${n}.webp`;
+const SIZES=['c-wide','c-tall','c-tall','c-wide'];
 const grid=document.getElementById('pfGrid');
 grid.innerHTML=projects.map((p,i)=>`
-  <button class="card ${p.size} reveal" data-cat="${p.tag}" data-i="${i}" aria-label="Ver ${p.t}">
+  <button class="card ${SIZES[i%4]} reveal" data-cat="${p.tag}" data-i="${i}" aria-label="Ver ${p.t}">
     <span class="tag">${p.tag}</span>
-    <div class="img"><img src="${p.img}" alt="${p.t}, ${p.place}" loading="lazy"></div>
-    <div class="cap"><h4>${p.t}</h4><span>${p.place} · ${p.y}</span></div>
+    <div class="img"><img src="${src(p.imgs[0])}" alt="${p.t}" loading="lazy"></div>
+    <div class="cap"><h4>${p.t}</h4><span>${p.tag}</span></div>
   </button>`).join('');
 document.getElementById('filters').addEventListener('click',e=>{
-  const b=e.target.closest('button'); if(!b) return;
+  const b=e.target.closest('button');if(!b)return;
   document.querySelectorAll('#filters button').forEach(x=>x.classList.toggle('on',x===b));
   grid.querySelectorAll('.card').forEach(c=>c.classList.toggle('hide',b.dataset.f!=='all'&&c.dataset.cat!==b.dataset.f));
 });
-const modal=document.getElementById('modal');let cur=0;
+const modal=document.getElementById('modal'),mImg=document.getElementById('mImg');let cur=0;
 function openP(i){
   cur=(i+projects.length)%projects.length;const p=projects[cur];
-  document.getElementById('mImg').src=p.img;document.getElementById('mImg').alt=p.t;
-  document.getElementById('mMeta').textContent=`${p.tag} · ${p.place} · ${p.y}`;
+  mImg.src=src(p.imgs[0]);mImg.alt=p.t;
+  document.getElementById('mThumbs').innerHTML=p.imgs.length>1?p.imgs.map((n,k)=>`<img src="${src(n)}" data-n="${n}" class="${k?'':'on'}" alt="">`).join(''):'';
+  document.getElementById('mMeta').textContent=p.tag;
   document.getElementById('mTitle').textContent=p.t;
   document.getElementById('mTag').textContent=p.tagline;
   document.getElementById('mDesc').innerHTML=p.d.map(x=>`<p class="d">${x}</p>`).join('');
-  document.getElementById('mFacts').innerHTML=p.f.map(([k,v])=>`<div><dt>${k}</dt><dd>${v}</dd></div>`).join('');
+  document.getElementById('mChips').innerHTML=p.c.map(x=>`<span>${x}</span>`).join('');
+  document.getElementById('mIg').href=IG+p.ig+'/';
   modal.classList.add('open');modal.scrollTop=0;document.body.style.overflow='hidden';
 }
 function closeP(){modal.classList.remove('open');document.body.style.overflow='';}
+document.getElementById('mThumbs').addEventListener('click',e=>{const t=e.target.closest('img');if(!t)return;mImg.src=src(t.dataset.n);document.querySelectorAll('#mThumbs img').forEach(x=>x.classList.toggle('on',x===t));});
 grid.addEventListener('click',e=>{const c=e.target.closest('.card');if(c)openP(+c.dataset.i)});
 document.getElementById('mClose').onclick=closeP;
 document.getElementById('mPrev').onclick=()=>openP(cur-1);
 document.getElementById('mNext').onclick=()=>openP(cur+1);
 modal.addEventListener('click',e=>{if(e.target===modal||e.target.classList.contains('modal-inner'))closeP()});
 document.addEventListener('keydown',e=>{if(!modal.classList.contains('open'))return;if(e.key==='Escape')closeP();if(e.key==='ArrowRight')openP(cur+1);if(e.key==='ArrowLeft')openP(cur-1)});
-const io=new IntersectionObserver(es=>es.forEach(en=>{
-  if(!en.isIntersecting) return;
-  en.target.classList.add('in');
-  const n=en.target.querySelector('[data-count]');
-  if(n&&!n.dataset.plain&&!n.done){n.done=1;const t=+n.dataset.count,pre=n.dataset.prefix||'',pad=+(n.dataset.pad||0);let st=null;
-    const step=ts=>{st=st||ts;const k=Math.min((ts-st)/1500,1);n.textContent=pre+String(Math.round(t*(1-Math.pow(1-k,3)))).padStart(pad,'0');if(k<1)requestAnimationFrame(step)};requestAnimationFrame(step);}
-  io.unobserve(en.target);
-}),{threshold:.12});
+const io=new IntersectionObserver(es=>es.forEach(en=>{if(en.isIntersecting){en.target.classList.add('in');io.unobserve(en.target)}}),{threshold:.12});
 document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+document.querySelectorAll('.svc[data-svc]').forEach(a=>a.addEventListener('click',()=>{const s=a.dataset.svc;document.getElementById('f3').value=s;const t=document.getElementById('f4');if(!t.value.trim())t.value=`Hola, me interesa el servicio de ${s.toLowerCase()}. `;setTimeout(()=>t.focus({preventScroll:true}),800);}));
 document.querySelectorAll('nav.top ul a').forEach(a=>a.addEventListener('click',()=>document.getElementById('nav').classList.remove('open')));
 document.getElementById('form').addEventListener('submit',e=>{
   e.preventDefault();
@@ -397,8 +418,8 @@ document.getElementById('form').addEventListener('submit',e=>{
         type=document.getElementById('f3').value,msg=document.getElementById('f4').value.trim(),out=document.getElementById('sent');
   if(!name||!/\S+@\S+\.\S+/.test(mail)){out.textContent='Por favor completa tu nombre y un correo válido.';return;}
   const body=`Nombre: ${name}\nCorreo: ${mail}\nServicio: ${type}\n\n${msg}`;
-  location.href=`mailto:hola@aurastudioarq.com?subject=${encodeURIComponent('Nuevo proyecto — '+type)}&body=${encodeURIComponent(body)}`;
-  out.textContent='Abriendo tu correo… Si no se abre, escríbenos a hola@aurastudioarq.com';
+  location.href=`mailto:aura.studioarquitectura@gmail.com?subject=${encodeURIComponent('Nuevo proyecto — '+type)}&body=${encodeURIComponent(body)}`;
+  out.textContent='Abriendo tu correo… Si no se abre, escríbenos a aura.studioarquitectura@gmail.com';
 });
 </script>
 </body>

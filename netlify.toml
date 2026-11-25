@@ -1,0 +1,5 @@
+# Publica la carpeta raíz. Al construir, copia las fotos de Instagram en alta calidad
+# (1440 px) desde el proyecto de Netlify fabulous-caramel-2e01e0.
+[build]
+  publish = "."
+  command = "mkdir -p assets && for f in 1 2 3 4 5 6 7 8 9 10 11 12 logo; do curl -fsSL -o assets/$f.webp https://fabulous-caramel-2e01e0.netlify.app/assets/$f.webp; done"
