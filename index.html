@@ -5,7 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Aura Studio Arq — Arquitectura e Interiores · Lima</title>
 <meta name="description" content="Aura Studio Arquitectura: arquitectura e interiores en Lima. Delicadeza, confort y cercanía. Diseñamos espacios con alma, marca y propósito.">
-<link rel="icon" href="assets/logo.webp">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="canonical" href="https://aurastudioarq.com/">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://aurastudioarq.com/">
@@ -21,7 +23,7 @@
 <meta property="og:locale" content="es_PE">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#1d1b19">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"ProfessionalService","name":"Aura Studio Arq","alternateName":"Aura Studio Arquitectura","description":"Estudio de arquitectura e interiores en Lima: diseño interior, arquitectura, remodelación, espacios infantiles y asesoría personalizada.","url":"https://aurastudioarq.com/","image":"https://aurastudioarq.com/og-image.jpg","logo":"https://aurastudioarq.com/assets/logo.webp","email":"contacto@aurastudioarq.com","telephone":"+51 942 896 451","areaServed":"Lima, Perú","address":{"@type":"PostalAddress","addressLocality":"Lima","addressCountry":"PE"},"sameAs":["https://www.instagram.com/aura.studioarq/"]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"ProfessionalService","name":"Aura Studio Arq","alternateName":"Aura Studio Arquitectura","description":"Estudio de arquitectura e interiores en Lima: diseño interior, arquitectura, remodelación, espacios infantiles y asesoría personalizada.","url":"https://aurastudioarq.com/","image":"https://aurastudioarq.com/og-image.jpg","logo":"https://aurastudioarq.com/logo-aura.png","email":"contacto@aurastudioarq.com","telephone":"+51 942 896 451","areaServed":"Lima, Perú","address":{"@type":"PostalAddress","addressLocality":"Lima","addressCountry":"PE"},"sameAs":["https://www.instagram.com/aura.studioarq/"]}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500&family=Cormorant+Garamond:ital,wght@1,300;1,400&display=swap" rel="stylesheet">
@@ -57,7 +59,7 @@ em.serif{font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:30
 nav.top{position:absolute;top:0;left:0;right:0;z-index:5;display:flex;justify-content:space-between;align-items:center;padding:30px var(--pad) 22px;font-size:12px;letter-spacing:.14em;text-transform:uppercase}
 nav.top::after{content:"";position:absolute;left:var(--pad);right:var(--pad);bottom:0;height:1px;background:var(--line)}
 nav.top .logo{display:flex;align-items:center;gap:12px;font-weight:400;letter-spacing:.2em}
-nav.top .logo img{width:30px;height:30px;border-radius:50%}
+nav.top .logo img{width:46px;height:46px}
 .nav-ig{display:inline-flex;align-items:center;gap:8px}
 nav.top ul{display:flex;gap:clamp(18px,3.4vw,52px);list-style:none}
 nav.top ul a{position:relative;opacity:.9}
@@ -203,6 +205,7 @@ footer{background:var(--ink);color:#a39b91;font-size:12px;letter-spacing:.14em;t
 .foot.big{font-weight:200;color:var(--sand);font-size:clamp(60px,15vw,230px);letter-spacing:-.02em;line-height:.8;padding:60px var(--pad) 10px;text-transform:uppercase;border-bottom:1px solid #34302c;align-items:flex-end}
 .foot.big small{font-size:12px;letter-spacing:.2em;color:#a39b91;font-weight:300;line-height:1.8;text-align:right}
 .foot a:hover{color:var(--sand)}
+.foot-logo{width:clamp(96px,11vw,150px);height:auto;align-self:center}
 .socials{display:flex;gap:28px}
 @media (max-width:900px){
   nav.top ul{display:none}
@@ -229,7 +232,7 @@ footer{background:var(--ink);color:#a39b91;font-size:12px;letter-spacing:.14em;t
 <header class="hero" id="inicio">
   <img src="assets/3.webp" alt="Vallejo Librería Café — diseño interior de Aura Studio Arq" fetchpriority="high">
   <nav class="top" id="nav">
-    <a href="#inicio" class="logo"><img src="assets/logo.webp" alt="">AURA&nbsp;STUDIO&nbsp;ARQ</a>
+    <a href="#inicio" class="logo"><img src="logo-aura.svg" alt="Logo Aura Studio Arquitectura" width="46" height="46">AURA&nbsp;STUDIO&nbsp;ARQ</a>
     <ul>
       <li><a href="#estudio">Estudio</a></li>
       <li><a href="#servicios">Servicios</a></li>
@@ -360,7 +363,7 @@ footer{background:var(--ink);color:#a39b91;font-size:12px;letter-spacing:.14em;t
   </div>
 </section>
 <footer>
-  <div class="foot big">Aura<small>Arte · Diseño<br>Arquitectura</small></div>
+  <div class="foot big">Aura<small>Arte · Diseño<br>Arquitectura</small><img class="foot-logo" src="logo-aura.svg" alt="Logo Aura Studio Arquitectura" width="150" height="150" loading="lazy"></div>
   <div class="foot">
     <span>© 2026 Aura Studio Arquitectura · Lima, Perú</span>
     <div class="socials"><a class="nav-ig" href="https://www.instagram.com/aura.studioarq/" target="_blank" rel="noreferrer"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg> Instagram</a><a href="https://wa.me/51942896451" target="_blank" rel="noreferrer">WhatsApp</a><a href="mailto:contacto@aurastudioarq.com">Email</a></div>
