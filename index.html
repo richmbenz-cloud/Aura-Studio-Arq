@@ -6,6 +6,14 @@
 <title>Aura Studio Arq — Arquitectura e Interiores · Lima</title>
 <meta name="description" content="Aura Studio Arquitectura: arquitectura e interiores en Lima. Delicadeza, confort y cercanía. Diseñamos espacios con alma, marca y propósito.">
 <link rel="icon" href="assets/logo.webp">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Aura Studio Arq — Arquitectura e Interiores en Lima">
+<meta property="og:description" content="Delicadeza, confort y cercanía. Diseñamos espacios con alma, marca y propósito.">
+<meta property="og:image" content="https://warm-rugelach-360b1d.netlify.app/assets/3.webp">
+<meta property="og:locale" content="es_PE">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#1d1b19">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"ProfessionalService","name":"Aura Studio Arq","alternateName":"Aura Studio Arquitectura","description":"Estudio de arquitectura e interiores en Lima: diseño interior, arquitectura, remodelación, espacios infantiles y asesoría personalizada.","url":"https://warm-rugelach-360b1d.netlify.app/","image":"https://warm-rugelach-360b1d.netlify.app/assets/3.webp","logo":"https://warm-rugelach-360b1d.netlify.app/assets/logo.webp","email":"aura.studioarquitectura@gmail.com","areaServed":"Lima, Perú","address":{"@type":"PostalAddress","addressLocality":"Lima","addressCountry":"PE"},"sameAs":["https://www.instagram.com/aura.studioarq/"]}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500&family=Cormorant+Garamond:ital,wght@1,300;1,400&display=swap" rel="stylesheet">
@@ -26,7 +34,7 @@ a{color:inherit;text-decoration:none}
 img{display:block;max-width:100%}
 em.serif{font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:300;letter-spacing:0}
 .wrap{padding-left:var(--pad);padding-right:var(--pad)}
-.eyebrow{font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);display:flex;align-items:center;gap:14px}
+.eyebrow{font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);display:flex;align-items:center;gap:14px}
 .eyebrow::before{content:"";width:28px;height:1px;background:currentColor}
 .reveal{opacity:0;transform:translateY(28px);transition:opacity 1s ease,transform 1s cubic-bezier(.2,.7,.2,1)}
 .reveal.in{opacity:1;transform:none}
@@ -35,9 +43,10 @@ em.serif{font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:30
 .hero>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transform:scale(1.08);animation:settle 2.4s cubic-bezier(.2,.7,.2,1) forwards}
 @keyframes settle{to{transform:scale(1)}}
 .hero::after{content:"";position:absolute;inset:0;pointer-events:none;background:
+  linear-gradient(180deg,rgba(18,15,12,.6) 0%,transparent 22%),
   linear-gradient(90deg,rgba(18,15,12,.72) 0%,rgba(18,15,12,.25) 50%,rgba(18,15,12,.35) 100%),
   linear-gradient(0deg,rgba(18,15,12,.6),transparent 40%)}
-nav.top{position:absolute;top:0;left:0;right:0;z-index:5;display:flex;justify-content:space-between;align-items:center;padding:30px var(--pad) 22px;font-size:11px;letter-spacing:.14em;text-transform:uppercase}
+nav.top{position:absolute;top:0;left:0;right:0;z-index:5;display:flex;justify-content:space-between;align-items:center;padding:30px var(--pad) 22px;font-size:12px;letter-spacing:.14em;text-transform:uppercase}
 nav.top::after{content:"";position:absolute;left:var(--pad);right:var(--pad);bottom:0;height:1px;background:var(--line)}
 nav.top .logo{display:flex;align-items:center;gap:12px;font-weight:400;letter-spacing:.2em}
 nav.top .logo img{width:30px;height:30px;border-radius:50%}
@@ -55,61 +64,59 @@ nav.top ul a:hover::after{width:100%}
 .hero h1 span:nth-child(3) i{animation-delay:.24s;padding-left:.62em}
 @keyframes up{to{transform:none}}
 .hero-side{align-self:flex-end;margin-bottom:16vh;max-width:260px;opacity:0;animation:fade 1s .7s forwards}
-.hero-side p{font-size:12.5px;line-height:1.6;text-align:right;margin-bottom:34px}
+.hero-side p{font-size:14px;line-height:1.65;text-align:right;margin-bottom:34px}
 @keyframes fade{to{opacity:1}}
-.btn-card{display:inline-flex;justify-content:space-between;align-items:center;gap:60px;background:#fff;color:var(--ink);padding:20px 22px;font-size:11px;letter-spacing:.14em;text-transform:uppercase;min-width:240px;transition:background .3s,color .3s;border:0;cursor:pointer;font-family:inherit}
+.btn-card{display:inline-flex;justify-content:space-between;align-items:center;gap:60px;background:#fff;color:var(--ink);padding:20px 22px;font-size:12px;letter-spacing:.14em;text-transform:uppercase;min-width:240px;transition:background .3s,color .3s;border:0;cursor:pointer;font-family:inherit}
 .btn-card svg{transition:transform .3s}
 .btn-card:hover{background:var(--ink);color:#fff}
 .btn-card:hover svg{transform:translate(3px,-3px)}
 .scroll-btn{position:absolute;z-index:5;left:var(--pad);bottom:34px;width:38px;height:38px;border-radius:50%;background:#fff;color:var(--ink);display:grid;place-items:center;animation:bob 2.4s ease-in-out infinite}
 @keyframes bob{50%{transform:translateY(6px)}}
-.hero-meta{position:absolute;z-index:5;right:var(--pad);bottom:40px;font-size:10px;letter-spacing:.2em;text-transform:uppercase;opacity:.8}
+.hero-meta{position:absolute;z-index:5;right:var(--pad);bottom:40px;font-size:11px;letter-spacing:.2em;text-transform:uppercase;opacity:.8}
 .intro{padding-top:clamp(90px,12vw,160px);padding-bottom:clamp(80px,10vw,140px)}
 .intro-grid{display:grid;grid-template-columns:1.25fr 1fr;gap:6vw;align-items:end}
 .intro h2{font-weight:300;font-size:clamp(28px,3.4vw,50px);line-height:1.15;letter-spacing:-.01em;margin-top:28px}
 .intro h2 em.serif{font-size:1.12em;color:var(--gold)}
-.intro .copy{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-top:40px;font-size:14px;line-height:1.75;color:#55504a}
+.intro .copy{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-top:40px;font-size:15px;line-height:1.75;color:#55504a}
 .intro figure{position:relative}
-.intro figure img{width:100%;aspect-ratio:4/5;object-fit:cover}
-.intro figcaption{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-top:12px}
+.intro figure img{width:100%;height:auto}
+.intro figcaption{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-top:12px}
 .stats{display:grid;grid-template-columns:repeat(3,1fr);margin-top:56px;border-top:1px solid #d9d3ca}
 .stat{padding:26px 0 0 24px;border-right:1px solid #d9d3ca}
 .stat:first-child{padding-left:0}
 .stat:last-child{border-right:0}
 .stat b{display:block;font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:300;font-size:clamp(30px,3vw,46px);line-height:1}
-.stat span{display:block;margin-top:10px;font-size:12.5px;line-height:1.6;color:var(--muted)}
+.stat span{display:block;margin-top:10px;font-size:13.5px;line-height:1.6;color:var(--muted)}
 .services{background:var(--ink);color:var(--sand);padding:clamp(80px,10vw,140px) 0}
 .services .eyebrow{color:#a39b91}
 .services-head{display:flex;justify-content:space-between;align-items:flex-end;gap:40px;margin-bottom:60px;flex-wrap:wrap}
-.services-head p{max-width:360px;font-size:14px;line-height:1.7;color:#a39b91}
+.services-head p{max-width:380px;font-size:15px;line-height:1.7;color:#a39b91}
 .svc{color:inherit;cursor:pointer;display:grid;grid-template-columns:80px 1fr 1.2fr 60px;align-items:center;gap:30px;padding:34px 0;border-top:1px solid #3a3632}
 .svc:last-child{border-bottom:1px solid #3a3632}
-.svc .n{font-size:12px;color:#7d756c;letter-spacing:.1em}
+.svc .n{font-size:13px;color:#9a9187;letter-spacing:.1em}
 .svc h3{font-weight:300;font-size:clamp(22px,2.4vw,34px);text-transform:uppercase;letter-spacing:.01em;transition:transform .4s}
-.svc p{font-size:13.5px;line-height:1.7;color:#a39b91}
+.svc p{font-size:14.5px;line-height:1.7;color:#b3aa9f}
 .svc .arr{justify-self:end;width:44px;height:44px;border:1px solid #4a4540;border-radius:50%;display:grid;place-items:center;transition:all .35s}
 .svc:hover h3{transform:translateX(14px)}
 .svc:hover .arr{background:var(--sand);color:var(--ink);border-color:var(--sand);transform:rotate(-45deg)}
 .portfolio{padding-top:clamp(90px,11vw,150px);padding-bottom:clamp(90px,11vw,150px)}
 .pf-head{display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:30px;margin-bottom:50px}
 .filters{display:flex;gap:8px;flex-wrap:wrap}
-.filters button{font:inherit;font-size:11px;letter-spacing:.14em;text-transform:uppercase;background:none;border:1px solid #cfc8bd;padding:11px 18px;border-radius:40px;cursor:pointer;color:var(--ink);transition:all .3s}
+.filters button{font:inherit;font-size:12px;letter-spacing:.14em;text-transform:uppercase;background:none;border:1px solid #cfc8bd;padding:11px 18px;border-radius:40px;cursor:pointer;color:var(--ink);transition:all .3s}
 .filters button.on,.filters button:hover{background:var(--ink);color:#fff;border-color:var(--ink)}
-.pf-grid{display:grid;grid-template-columns:repeat(12,1fr);gap:26px 22px}
+.pf-grid{columns:2;column-gap:24px}
+.pf-grid .card{display:block;width:100%;break-inside:avoid;margin-bottom:34px}
 .card{position:relative;cursor:pointer;text-align:left;background:none;border:0;font:inherit;color:inherit;padding:0}
-.card.hide{display:none}
+.pf-grid .card.hide{display:none}
 .card .img{position:relative;overflow:hidden;background:#d6cfc5}
-.card .img img{width:100%;height:100%;object-fit:cover;transition:transform 1.2s cubic-bezier(.2,.7,.2,1)}
+.card .img img{width:100%;height:auto;transition:transform 1.2s cubic-bezier(.2,.7,.2,1)}
 .card:hover .img img{transform:scale(1.05)}
 .card .img::after{content:"Ver proyecto ↗";position:absolute;right:16px;bottom:16px;background:#fff;color:var(--ink);font-size:10px;letter-spacing:.16em;text-transform:uppercase;padding:10px 14px;opacity:0;transform:translateY(8px);transition:all .4s}
 .card:hover .img::after{opacity:1;transform:none}
 .card .cap{display:flex;justify-content:space-between;align-items:baseline;gap:12px;padding-top:16px}
 .card .cap h4{font-weight:400;font-size:16px;letter-spacing:.02em}
-.card .cap span{font-size:11px;color:var(--muted);letter-spacing:.12em;text-transform:uppercase;white-space:nowrap}
-.card .tag{position:absolute;top:16px;left:16px;background:rgba(255,255,255,.9);font-size:10px;letter-spacing:.16em;text-transform:uppercase;padding:7px 12px;z-index:2}
-.c-tall{grid-column:span 5}.c-tall .img{aspect-ratio:4/5}
-.c-wide{grid-column:span 7}.c-wide .img{aspect-ratio:7/5}
-.c-full{grid-column:span 12}.c-full .img{aspect-ratio:12/5}
+.card .cap span{font-size:12px;color:var(--muted);letter-spacing:.12em;text-transform:uppercase;white-space:nowrap}
+.card .tag{position:absolute;top:16px;left:16px;background:rgba(255,255,255,.92);font-size:11px;letter-spacing:.16em;text-transform:uppercase;padding:7px 12px;z-index:2}
 .modal{position:fixed;inset:0;z-index:50;background:#171310;color:var(--sand);display:none;overflow-y:auto}
 .modal.open{display:block;animation:fade .4s forwards}
 .modal-inner{display:grid;grid-template-columns:1.3fr 1fr;gap:5vw;padding:90px var(--pad) 70px;min-height:100%;align-items:center}
@@ -117,7 +124,7 @@ nav.top ul a:hover::after{width:100%}
 .modal .eyebrow{color:#a39b91}
 .modal h3{font-weight:300;text-transform:uppercase;font-size:clamp(34px,4vw,60px);line-height:1;margin:20px 0 18px}
 .modal .tagline{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(20px,1.8vw,26px);line-height:1.35;color:#e4d9c9;margin-bottom:24px}
-.modal p.d{font-size:14px;line-height:1.8;color:#b4aa9e;margin-bottom:14px}
+.modal p.d{font-size:15px;line-height:1.8;color:#b4aa9e;margin-bottom:14px}
 .modal dl{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:28px;padding-top:22px;border-top:1px solid #3a3632}
 .modal dt{font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:#857c71}
 .modal dd{font-size:13.5px;margin-top:6px}
@@ -130,13 +137,23 @@ nav.top ul a:hover::after{width:100%}
 .m-thumbs img{width:76px;height:76px;object-fit:cover;cursor:pointer;opacity:.55;transition:opacity .3s}
 .m-thumbs img.on,.m-thumbs img:hover{opacity:1}
 .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:24px}
-.chips span{font-size:11px;letter-spacing:.1em;text-transform:uppercase;border:1px solid #4a4540;padding:8px 12px;border-radius:30px;color:#d9ccbc}
+.chips span{font-size:12px;letter-spacing:.1em;text-transform:uppercase;border:1px solid #4a4540;padding:8px 12px;border-radius:30px;color:#d9ccbc}
 .svc:focus-visible{outline:1px solid var(--gold);outline-offset:4px}
-.ig-grid a::after{content:"Ver en Instagram ↗";position:absolute;left:0;right:0;bottom:0;padding:10px;font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:#fff;background:linear-gradient(0deg,rgba(0,0,0,.55),transparent);opacity:0;transition:opacity .4s}
-.ig-grid a:hover::after{opacity:1}
 .ig-follow{display:inline-flex;align-items:center;gap:12px;background:var(--ink);color:#fff;padding:16px 22px;font-size:11px;letter-spacing:.16em;text-transform:uppercase;transition:background .3s}
 .ig-follow:hover{background:var(--gold)}
 .ig-bio{font-size:14px;line-height:1.7;color:#55504a;max-width:420px;margin-top:14px}
+.ig-feature{display:grid;grid-template-columns:1fr 1.15fr;gap:5vw;align-items:center}
+.ig-feature .post{position:relative;display:block;overflow:hidden;max-width:520px}
+.ig-feature .post img{width:100%;height:auto;transition:transform .9s cubic-bezier(.2,.7,.2,1)}
+.ig-feature .post:hover img{transform:scale(1.04)}
+.ig-feature .post span{position:absolute;left:14px;bottom:14px;background:#fff;color:var(--ink);font-size:11px;letter-spacing:.14em;text-transform:uppercase;padding:9px 12px}
+.ig-feature h2{font-weight:300;font-size:clamp(34px,4.4vw,64px);line-height:1;margin:22px 0 18px}
+.ig-feature ol{list-style:none;counter-reset:t;margin:22px 0 30px;border-top:1px solid #cfc6b9;max-width:460px}
+.ig-feature li{counter-increment:t;display:flex;gap:18px;align-items:baseline;padding:14px 0;border-bottom:1px solid #cfc6b9;font-size:16px}
+.ig-feature li::before{content:"0" counter(t);font-size:12px;letter-spacing:.14em;color:var(--muted)}
+.tag3d{display:inline-block;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}.reveal{opacity:1;transform:none}.hero h1 span i{transform:none}.hero-side{opacity:1}}
 .ig{background:var(--sand);padding:clamp(80px,9vw,130px) 0}
 .ig-head{display:flex;justify-content:space-between;align-items:flex-end;gap:30px;flex-wrap:wrap;margin-bottom:44px}
 .ig-head h2{font-weight:300;font-size:clamp(34px,4.4vw,64px);line-height:1;margin-top:22px}
@@ -147,28 +164,28 @@ nav.top ul a:hover::after{width:100%}
 .ig-grid a:hover img{transform:scale(1.07);filter:brightness(.8)}
 .contact{position:relative;color:#fff;background:#211c17;overflow:hidden}
 .contact>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-.contact::after{content:"";position:absolute;inset:0;background:rgba(20,17,14,.74)}
+.contact::after{content:"";position:absolute;inset:0;background:radial-gradient(70% 80% at 20% 30%,rgba(176,138,90,.22),transparent 70%)}
 .contact-inner{position:relative;z-index:2;display:grid;grid-template-columns:1.1fr 1fr;gap:6vw;padding:clamp(90px,11vw,150px) var(--pad)}
 .contact h2{font-weight:300;font-size:clamp(40px,6vw,92px);text-transform:uppercase;line-height:.98}
 .contact .eyebrow{color:#cfc6ba;margin-bottom:26px}
 .info{margin-top:56px;display:grid;grid-template-columns:repeat(3,auto);justify-content:start;gap:44px;font-size:14px;line-height:1.8}
-.info small{display:block;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:#bdb3a6;margin-bottom:6px}
+.info small{display:block;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#bdb3a6;margin-bottom:6px}
 .info a:hover{text-decoration:underline}
 form{display:grid;gap:26px;align-content:end}
 .field{position:relative}
 .field input,.field textarea,.field select{width:100%;background:transparent;border:0;border-bottom:1px solid var(--line);color:#fff;font:inherit;font-size:15px;padding:12px 0;outline:none;transition:border-color .3s;border-radius:0}
 .field select option{color:var(--ink)}
 .field textarea{resize:none;height:90px}
-.field label{position:absolute;left:0;top:12px;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#cfc6ba;pointer-events:none;transition:all .3s}
+.field label{position:absolute;left:0;top:12px;font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:#cfc6ba;pointer-events:none;transition:all .3s}
 .field input:focus,.field textarea:focus{border-color:#fff}
-.field input:focus+label,.field input:not(:placeholder-shown)+label,.field textarea:focus+label,.field textarea:not(:placeholder-shown)+label{top:-10px;font-size:9.5px}
+.field input:focus+label,.field input:not(:placeholder-shown)+label,.field textarea:focus+label,.field textarea:not(:placeholder-shown)+label{top:-12px;font-size:11px}
 .row2{display:grid;grid-template-columns:1fr 1fr;gap:26px}
 form .btn-card{justify-self:start}
 .sent{font-size:13px;color:#e4dccf;min-height:20px;line-height:1.6}
-footer{background:var(--ink);color:#8f877d;font-size:11px;letter-spacing:.14em;text-transform:uppercase}
+footer{background:var(--ink);color:#a39b91;font-size:12px;letter-spacing:.14em;text-transform:uppercase}
 .foot{display:flex;justify-content:space-between;align-items:center;padding:30px var(--pad);flex-wrap:wrap;gap:16px}
 .foot.big{font-weight:200;color:var(--sand);font-size:clamp(60px,15vw,230px);letter-spacing:-.02em;line-height:.8;padding:60px var(--pad) 10px;text-transform:uppercase;border-bottom:1px solid #34302c;align-items:flex-end}
-.foot.big small{font-size:11px;letter-spacing:.2em;color:#8f877d;font-weight:300;line-height:1.8;text-align:right}
+.foot.big small{font-size:12px;letter-spacing:.2em;color:#a39b91;font-weight:300;line-height:1.8;text-align:right}
 .foot a:hover{color:var(--sand)}
 .socials{display:flex;gap:28px}
 @media (max-width:900px){
@@ -182,8 +199,8 @@ footer{background:var(--ink);color:#8f877d;font-size:11px;letter-spacing:.14em;t
   .intro .copy{grid-template-columns:1fr}
   .svc{grid-template-columns:40px 1fr 44px}
   .svc p{display:none}
-  .pf-grid>.card{grid-column:span 12}
-  .ig-grid{grid-template-columns:repeat(3,1fr)}
+  .pf-grid{columns:1}
+  .ig-feature{grid-template-columns:1fr}
   .stats{grid-template-columns:1fr}
   .stat{padding-left:0;border-right:0;border-bottom:1px solid #d9d3ca;padding-bottom:20px}
   .info{grid-template-columns:1fr;gap:22px}
@@ -201,7 +218,7 @@ footer{background:var(--ink);color:#8f877d;font-size:11px;letter-spacing:.14em;t
       <li><a href="#estudio">Estudio</a></li>
       <li><a href="#servicios">Servicios</a></li>
       <li><a href="#proyectos">Proyectos</a></li>
-      <li><a href="#instagram">Instagram</a></li>
+      <li><a href="#instagram">Tips</a></li>
       <li><a href="#contacto">Contacto</a></li>
     </ul>
     <button class="burger" aria-label="Menú" onclick="document.getElementById('nav').classList.toggle('open')">
@@ -238,8 +255,8 @@ footer{background:var(--ink);color:#8f877d;font-size:11px;letter-spacing:.14em;t
       </div>
     </div>
     <figure class="reveal">
-      <img src="assets/2.webp" alt="Vallejo Librería Café — interior" loading="lazy">
-      <figcaption>Vallejo Librería Café</figcaption>
+      <img src="assets/12.webp" alt="Propuesta 3D de cocina — Aura Studio Arq" loading="lazy">
+      <figcaption>Propuesta 3D — Cocina abierta</figcaption>
     </figure>
   </div>
 </section>
@@ -270,23 +287,23 @@ footer{background:var(--ink);color:#8f877d;font-size:11px;letter-spacing:.14em;t
   <div class="pf-grid" id="pfGrid"></div>
 </section>
 <section class="ig" id="instagram">
-  <div class="wrap">
-    <div class="ig-head">
-      <div><div class="eyebrow">04 — Síguenos</div><h2 class="reveal">@aura.studioarq</h2><p class="ig-bio">Proyectos, procesos, moodboards y tips de diseño. Arquitectura | Interiores.</p></div>
-      <a class="ig-follow" href="https://www.instagram.com/aura.studioarq/" target="_blank" rel="noreferrer"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg> Seguir en Instagram</a>
-    </div>
-    <div class="ig-grid">
-      <a class="reveal" href="https://www.instagram.com/aura.studioarq/p/DMtBJ5YJuoD/" target="_blank" rel="noreferrer"><img src="assets/5.webp" alt="Sala de juegos" loading="lazy"></a>
-      <a class="reveal" href="https://www.instagram.com/aura.studioarq/p/DMiOPUNsnOH/" target="_blank" rel="noreferrer"><img src="assets/6.webp" alt="Dormitorio de Santiago" loading="lazy"></a>
-      <a class="reveal" href="https://www.instagram.com/aura.studioarq/p/DMyRivRpoId/" target="_blank" rel="noreferrer"><img src="assets/4.webp" alt="3 trucos para tu sala" loading="lazy"></a>
-      <a class="reveal" href="https://www.instagram.com/aura.studioarq/p/DMO0jtVMvMZ/" target="_blank" rel="noreferrer"><img src="assets/8.webp" alt="Baño minimalista" loading="lazy"></a>
-      <a class="reveal" href="https://www.instagram.com/aura.studioarq/p/CpWKh8XJQWG/" target="_blank" rel="noreferrer"><img src="assets/9.webp" alt="Terraza familiar" loading="lazy"></a>
-      <a class="reveal" href="https://www.instagram.com/aura.studioarq/p/CovQQVDJJRM/" target="_blank" rel="noreferrer"><img src="assets/12.webp" alt="Cocina: propuesta de diseño" loading="lazy"></a>
+  <div class="wrap ig-feature">
+    <a class="post reveal" href="https://www.instagram.com/aura.studioarq/p/DMyRivRpoId/" target="_blank" rel="noreferrer"><img src="assets/4.webp" alt="3 trucos para que tu sala se vea más amplia" loading="lazy"><span>Ver en Instagram ↗</span></a>
+    <div>
+      <div class="eyebrow">04 — Tips Aura</div>
+      <h2 class="reveal">¿Tu sala se siente pequeña?</h2>
+      <p class="ig-bio">No necesitas botar paredes. Tres trucos simples pero potentes para que se vea más amplia:</p>
+      <ol>
+        <li>Colores claros</li>
+        <li>Espejos bien ubicados</li>
+        <li>Muebles ligeros y funcionales</li>
+      </ol>
+      <p class="ig-bio">Más tips, procesos y moodboards en nuestro Instagram.</p><br>
+      <a class="ig-follow" href="https://www.instagram.com/aura.studioarq/" target="_blank" rel="noreferrer"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg> Seguir a @aura.studioarq</a>
     </div>
   </div>
 </section>
 <section class="contact" id="contacto">
-  <img src="assets/10.webp" alt="" loading="lazy">
   <div class="contact-inner">
     <div>
       <div class="eyebrow">05 — Contacto</div>
@@ -297,17 +314,19 @@ footer{background:var(--ink);color:#8f877d;font-size:11px;letter-spacing:.14em;t
         <div><small>Instagram</small><a href="https://www.instagram.com/aura.studioarq/" target="_blank" rel="noreferrer">@aura.studioarq ↗</a></div>
       </div>
     </div>
-    <form id="form" novalidate>
+    <form id="form" name="contacto" method="POST" data-netlify="true" netlify-honeypot="bot-field" novalidate>
+      <input type="hidden" name="form-name" value="contacto">
+      <p hidden><label>No llenar: <input name="bot-field"></label></p>
       <div class="row2">
-        <div class="field"><input id="f1" placeholder=" " required><label for="f1">Nombre</label></div>
-        <div class="field"><input id="f2" type="email" placeholder=" " required><label for="f2">Correo</label></div>
+        <div class="field"><input id="f1" name="nombre" autocomplete="name" placeholder=" " required><label for="f1">Nombre</label></div>
+        <div class="field"><input id="f2" name="correo" type="email" autocomplete="email" placeholder=" " required><label for="f2">Correo</label></div>
       </div>
       <div class="field">
-        <select id="f3" aria-label="Servicio">
+        <select id="f3" name="servicio" aria-label="Servicio">
           <option>Diseño interior</option><option>Arquitectura</option><option>Remodelación</option><option>Espacios infantiles</option><option>Asesoría personalizada</option>
         </select>
       </div>
-      <div class="field"><textarea id="f4" placeholder=" "></textarea><label for="f4">Cuéntanos sobre tu espacio</label></div>
+      <div class="field"><textarea id="f4" name="mensaje" placeholder=" "></textarea><label for="f4">Cuéntanos sobre tu espacio</label></div>
       <button class="btn-card" type="submit">Conversemos
         <svg width="11" height="11" viewBox="0 0 11 11"><path d="M1 10L10 1M3 1h7v7" fill="none" stroke="currentColor" stroke-width="1.1"/></svg>
       </button>
@@ -340,7 +359,7 @@ footer{background:var(--ink);color:#8f877d;font-size:11px;letter-spacing:.14em;t
 <script>
 const IG="https://www.instagram.com/aura.studioarq/p/";
 const projects=[
-  {t:"Vallejo Librería Café",tag:"Comercial",imgs:[3,2],ig:"DM9ZCMmMIWc",
+  {t:"Vallejo Librería Café",tag:"Comercial",imgs:[2,3],ig:"DM9ZCMmMIWc",
    tagline:"Un concepto donde la arquitectura abraza la lectura, el arte y el café.",
    d:["Luz cálida, vegetación suspendida y texturas suaves que invitan a quedarse. Cada detalle fue pensado para provocar una pausa, una conversación, una inspiración.","Cortinas teatrales, tonos cálidos y líneas limpias que invitan al pensamiento y a la conversación. Cada rincón es una pausa estética."],
    c:["Luz cálida","Vegetación suspendida","Texturas suaves"]},
@@ -374,13 +393,12 @@ const projects=[
    c:["Isla central","Madera y tonos claros","Funcional"]}
 ];
 const src=n=>`assets/${n}.webp`;
-const SIZES=['c-wide','c-tall','c-tall','c-wide'];
 const grid=document.getElementById('pfGrid');
 grid.innerHTML=projects.map((p,i)=>`
-  <button class="card ${SIZES[i%4]} reveal" data-cat="${p.tag}" data-i="${i}" aria-label="Ver ${p.t}">
+  <button class="card reveal" data-cat="${p.tag}" data-i="${i}" aria-label="Ver ${p.t}">
     <span class="tag">${p.tag}</span>
     <div class="img"><img src="${src(p.imgs[0])}" alt="${p.t}" loading="lazy"></div>
-    <div class="cap"><h4>${p.t}</h4><span>${p.tag}</span></div>
+    <div class="cap"><h4>${p.t}</h4><span>Propuesta 3D</span></div>
   </button>`).join('');
 document.getElementById('filters').addEventListener('click',e=>{
   const b=e.target.closest('button');if(!b)return;
@@ -392,7 +410,7 @@ function openP(i){
   cur=(i+projects.length)%projects.length;const p=projects[cur];
   mImg.src=src(p.imgs[0]);mImg.alt=p.t;
   document.getElementById('mThumbs').innerHTML=p.imgs.length>1?p.imgs.map((n,k)=>`<img src="${src(n)}" data-n="${n}" class="${k?'':'on'}" alt="">`).join(''):'';
-  document.getElementById('mMeta').textContent=p.tag;
+  document.getElementById('mMeta').textContent=p.tag+' · Propuesta 3D';
   document.getElementById('mTitle').textContent=p.t;
   document.getElementById('mTag').textContent=p.tagline;
   document.getElementById('mDesc').innerHTML=p.d.map(x=>`<p class="d">${x}</p>`).join('');
@@ -412,14 +430,18 @@ const io=new IntersectionObserver(es=>es.forEach(en=>{if(en.isIntersecting){en.t
 document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
 document.querySelectorAll('.svc[data-svc]').forEach(a=>a.addEventListener('click',()=>{const s=a.dataset.svc;document.getElementById('f3').value=s;const t=document.getElementById('f4');if(!t.value.trim())t.value=`Hola, me interesa el servicio de ${s.toLowerCase()}. `;setTimeout(()=>t.focus({preventScroll:true}),800);}));
 document.querySelectorAll('nav.top ul a').forEach(a=>a.addEventListener('click',()=>document.getElementById('nav').classList.remove('open')));
-document.getElementById('form').addEventListener('submit',e=>{
+document.getElementById('form').addEventListener('submit',async e=>{
   e.preventDefault();
-  const name=document.getElementById('f1').value.trim(),mail=document.getElementById('f2').value.trim(),
-        type=document.getElementById('f3').value,msg=document.getElementById('f4').value.trim(),out=document.getElementById('sent');
+  const form=e.target,btn=form.querySelector('button[type=submit]'),out=document.getElementById('sent');
+  const name=document.getElementById('f1').value.trim(),mail=document.getElementById('f2').value.trim();
   if(!name||!/\S+@\S+\.\S+/.test(mail)){out.textContent='Por favor completa tu nombre y un correo válido.';return;}
-  const body=`Nombre: ${name}\nCorreo: ${mail}\nServicio: ${type}\n\n${msg}`;
-  location.href=`mailto:aura.studioarquitectura@gmail.com?subject=${encodeURIComponent('Nuevo proyecto — '+type)}&body=${encodeURIComponent(body)}`;
-  out.textContent='Abriendo tu correo… Si no se abre, escríbenos a aura.studioarquitectura@gmail.com';
+  btn.disabled=true;out.textContent='Enviando…';
+  try{
+    const r=await fetch('/',{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:new URLSearchParams(new FormData(form)).toString()});
+    if(!r.ok)throw new Error(r.status);
+    out.textContent=`¡Gracias, ${name}! Recibimos tu mensaje y te responderemos pronto.`;form.reset();
+  }catch(err){out.textContent='No pudimos enviar tu mensaje. Escríbenos a aura.studioarquitectura@gmail.com';}
+  btn.disabled=false;
 });
 </script>
 </body>
